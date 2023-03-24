@@ -16,6 +16,7 @@
       crossorigin="anonymous"
       defer
     ></script>
+    <script src="../javascript/index.js" defer></script>
 
     <title>Document</title>
   </head>
@@ -61,29 +62,56 @@
             <div class="modal-body">
               <!-- preguntar porque no se hace escroleable -->
               <div class="modal-dialog-scrollable">
-                <form id="createForm" action="/create" method="get" class="d-flex flex-column gap-2">
-                  <input type="text" placeholder="Código" required />
+                <form
+                  id="createForm"
+                  action=""
+                  
+                  class="d-flex flex-column gap-2"
+                >
+                  <input
+                    id="codigoPelicula"
+                    type="text"
+                    placeholder="Código"
+                    required
+                  />
                   <input
                     type="text"
+                    id="nombrePelicula"
                     placeholder="Nombre de película o serie"
                     required
                   />
-                  <input type="text" placeholder="Categoría" required />
-                  <input type="text" placeholder="Descripción breve" required/>
+                  <input
+                    id="categoriaPelicula"
+                    type="text"
+                    placeholder="Categoría"
+                    required
+                  />
+                  <input
+                    id="descripcionPelicula"
+                    type="text"
+                    placeholder="Descripción breve"
+                    required
+                  />
                   <div class="form-check form-switch">
                     <input
                       class="form-check-input"
                       type="checkbox"
                       role="switch"
-                      id="flexSwitchCheckChecked"
-                      
+                      id="isCheked"
                     />
-                    <label class="form-check-label" for="flexSwitchCheckChecked"
+                    <label class="form-check-label" for="isCheked"
                       >Marcar como disponible</label
                     >
                   </div>
-                  <!-- <input type="submit" value="Agregar" /> -->
+                  <button
+                  for="createForm"
+                  id="agregarPelicula"
+                  type="submit"
+                  value="Agregar pelicula"
+                  class="btn btn-primary"
+                >enviar</button>
                 </form>
+             
               </div>
             </div>
             <div class="modal-footer">
@@ -94,7 +122,9 @@
               >
                 Cancelar
               </button>
-              <button type="submit" class="btn btn-primary" form="createForm">Agregar</button>
+              <button  class="btn btn-primary">
+                Agregar
+              </button>
             </div>
           </div>
         </div>
@@ -111,34 +141,10 @@
             <th scope="col">Opciones</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
+        <tbody id="contenedorPelicula">
+
         </tbody>
       </table>
-
     </main>
   </body>
 </html>
