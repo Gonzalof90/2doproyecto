@@ -26,9 +26,7 @@
         </div>
         <button type="submit">Login</button>
         <a href="" class="my-2 mx-2 text-center" required="false" data-bs-toggle="modal" data-bs-target="#exampleModal">Recuperar contraseña</a>
-        <a href="/views/register.html">
-          registrate aqui!
-        </a>
+        <a href="" claass="my-2 mx-2 text-center required="false" data-bs-toggle="modal" data-bs-target="#exampleModal2">Registrate aqui! </a>
       </form>
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -48,6 +46,60 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Regristarse</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Ingrese su correo electronico</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" required> <br>
+              <label for="exampleInputPassword" class="form-label">Ingrese su password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" required>
+            </div>
+          </div>
+          <div class="container  my-5">
+            <div class="row text-center my-2">
+              <div class="col-12 my-2">Iniciar sesion</div>
+            </div>
+            <div class="row flex-column">
+              <div class=" mb-1">
+                <button class="btn btn-outline-primary w-100 my-1">
+                  <div class="row align-items-center">
+                    <div class="col-2 d-none d-md-block">
+                      <img src="/assets/icons/icons8-facebook-60.png" alt="logo de facebook">
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-10 text-lg-start">
+                      Facebook
+                    </div>
+                  </div>
+                </button>  
+              </div>
+              <div>
+                <button class="btn btn-outline-danger w-100 my-1">
+                  <div class="row align-items-center">
+                    <div class="col-2 d-none d-xs-none d-md-block">
+                      <img src="/assets/icons/icons8-logo-de-google-60.png" alt="logo de google">
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-10 text-lg-start">
+                      Google
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Regristarse </button>
           </div>
         </div>
       </div>
