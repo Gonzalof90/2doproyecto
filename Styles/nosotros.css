@@ -21,3 +21,7 @@ body {
 #nos {
     background-color: #fdb37c;
 }
+#main {
+    background-color: black;
+    opacity: 0.85;
+}
