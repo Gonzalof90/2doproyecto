@@ -1,0 +1,16 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.bg{
+
+    background-color: #34343b
+    ;
+    color: #fc7c1c;
+}
+.btn {
+    text-decoration-color: #fc7c1c;
+    -moz-text-decoration-color: #fc7c1c;
+}
