@@ -6,6 +6,9 @@ let $descripcionPelicula = document.querySelector("#descripcionPelicula");
 let $isCheked = document.querySelector("#isCheked");
 let $contenedorPelicula = document.querySelector("#contenedorPelicula")
 let $agregarPelicula = document.querySelector("#agregarPelicula")
+let $opcionesDePeliculas = document.querySelector(".opcionesDePeliculas")
+
+
 
 var peliculas = []
 const peliculasEnLocalStorage = localStorage.getItem("peliculas")
@@ -32,7 +35,9 @@ $agregarPelicula.addEventListener("click",function (event){
     console.log(peliculas)
     
     $formCreate.reset()
-
+    
+    
+    
     
 }
 )
@@ -45,14 +50,22 @@ const guardarPeliculas = (peliculasGuardada) => {
 
   const pintarPeliculas = () => {
     $contenedorPelicula.innerHTML = "";
+    let opcionesDePeliculas = "opcionesDePeliculas"
     peliculas.forEach((pelicula) => {
       const estructuraPelicula = `<tr ><th scope="row">${pelicula.codigo}</th>
       <td>${pelicula.nombre}</td>
       <td>${pelicula.categoria}</td>
       <td>${pelicula.descripcion}</td>
       <td>${pelicula.checked ? "✔️" : "✖️"}</td>
-      <td>@mdo</td></tr>`;
+      <td class="${opcionesDePeliculas}"><img src="../assets/icons/papelera-de-reciclaje.png" alt="papelera-de-reciclaje" style="width:2vw"><img src="../assets/icons/editar.png" alt="papelera-de-reciclaje" style="width:2vw"><img src="../assets/icons/mensaje-destacado.png" alt="papelera-de-reciclaje" style="width:2vw"></td></tr>`;
       $contenedorPelicula.innerHTML += estructuraPelicula;
+
+      
     });
   };
 pintarPeliculas()
+
+
+if($contenedorPelicula){
+  $opcionesDePeliculas.textContent("asdasd")
+}
