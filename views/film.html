@@ -8,23 +8,24 @@
         <title>Detalle Pelicula</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous" defer></script>
+        <script src="/javascript/film.js" defer></script>
     </head>
     <body class="bg">
         <main > 
-            <section class="">
+            <section id="filmContainer" class="">
                 <div data-bs-theme="dark">
                     <button type="button" class="btn-close" aria-label="Close"></button>
                 </div>
                 <article class="bg d-flex  justify-content-center text-center m-0 p-1 ">
                     <div class=" container-fluid bg col-12 " >
-                        <img src="https://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/2517.jpg" class=" img-fluid w-100 img" alt="pelicula">
+                        <img id="bannerPelicula" src="https://blogdesuperheroes.es/wp-content/plugins/BdSGallery/BdSGaleria/2517.jpg" class=" img-fluid w-100 img" alt="pelicula">
                         <h2 class="card-title"id="nombrePelicula">Los Vengadores</h2>
                         <div class="d-flex flex-wrap justify-content-md-center">
-                            <p class="m-1"id="">2012</p>
-                            <p class="m-1"> 2h 23m </p>
-                            <p class="m-1">Aventura/Acción</p>
+                            <p id="añoPelicula" class="m-1 text-dark-emphasis">2012</p>
+                            <p id="duracionPelicula" class="m-1 text-light"> 2h 23m </p>
+                            <p id="generoPelicula" class="m-1">Aventura/Acción</p>
                         </div>
-                        <a href="#" class="btn col-12 btn-secondary">VER AHORA</a>
+                        <a href="/views/error404" class="btn col-12 btn-secondary">VER AHORA</a>
                     </div>
                 </article>
                 <article class="d-flex text-center row justify-content-center align-content-lg-start">
@@ -32,18 +33,19 @@
                         <p>
                             <a class="btn btn-secondary bg" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Reparto</a>
                             <button class="btn btn-secondary bg" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Sinopsis</button>
+                            <button id="verTrailer" class="btn btn-secondary bg" type="button">Ver Trailer</button>
                         </p>
                         <div class="row">
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                            <div class="col ">
+                                <div class="collapse multi-collapse " id="multiCollapseExample1">
                                     <div class="card card-body">
                                         <h3>Reparto de actores</h3>  
                                         <ul class="list-group">
-                                            <li class="list-group-item">Robert Downey Jr.</li>
-                                            <li class="list-group-item">Mark Ruffalo</li>
-                                            <li class="list-group-item">Chris Evans</li>
-                                            <li class="list-group-item">Chris Hemsworth</li>
-                                            <li class="list-group-item">Scarlett Johansson</li>
+                                            <li id="Actor1" class="list-group-item">Robert Downey Jr.</li>
+                                            <li id="Actor2" class="list-group-item">Mark Ruffalo</li>
+                                            <li id="Actor3" class="list-group-item">Chris Evans</li>
+                                            <li id="Actor4" class="list-group-item">Chris Hemsworth</li>
+                                            <li id="Actor5" class="list-group-item">Scarlett Johansson</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -52,13 +54,16 @@
                                 <div class="collapse multi-collapse" id="multiCollapseExample2">
                                     <div class="card card-body">
                                         <h3>Sinopsis</h3>
-                                        <p>El director de la Agencia SHIELD decide reclutar a un equipo para salvar al mundo de un desastre casi seguro cuando un enemigo inesperado surge como una gran amenaza para la seguridad mundial.</p>
+                                        <p id="sinopsisPelicula" class="text-black">El director de la Agencia SHIELD decide reclutar a un equipo para salvar al mundo de un desastre casi seguro cuando un enemigo inesperado surge como una gran amenaza para la seguridad mundial.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </article>
+                <div id="contenedorTrailer" class="d-flex justify-content-xl-center align-content-center text-center container-fluid">
+
+                </div>
             </section>
         </main>
     </body>
