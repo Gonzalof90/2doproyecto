@@ -1,0 +1,23 @@
+* { box-sizing:border-box;}
+
+html, body { height: 100%; }
+
+@keyframes pan {
+    100% {background-position: 15% 50%; }
+}
+
+body {
+    display:grid;
+    place-items: center;
+    margin:0;
+    padding:0 24px;
+    background-image: url(/assets/bg/low-poly-grid-haikei\ \(1\).svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: 
+    pan 6s infinite alternate linear;
+}
+
+#nos {
+    background-color: #fdb37c;
+}
