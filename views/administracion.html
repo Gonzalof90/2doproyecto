@@ -65,31 +65,35 @@
                 <form
                   id="createForm"
                   action=""
-                  
-                  class="d-flex flex-column gap-2"
+                  onsubmit=""
+                  class="d-flex flex-column gap-2 form-control"
                 >
                   <input
                     id="codigoPelicula"
-                    type="text"
-                    placeholder="Código"
+                    type="hidden"
+                    
                     required
+                    
                   />
                   <input
                     type="text"
                     id="nombrePelicula"
                     placeholder="Nombre de película o serie"
+                    class="form-control"
                     required
                   />
                   <input
-                    id="categoriaPelicula"
+                    id="generoPelicula"
                     type="text"
-                    placeholder="Categoría"
+                    placeholder="Género"
+                    class="form-control"
                     required
                   />
                   <input
                     id="descripcionPelicula"
                     type="text"
                     placeholder="Descripción breve"
+                    class="form-control"
                     required
                   />
                   <div class="form-check form-switch">
@@ -108,7 +112,7 @@
                   id="agregarPelicula"
                   type="submit"
                   value="Agregar pelicula"
-                  class="btn btn-primary"
+                  class="btn btn-primary form-control"
                 >enviar</button>
                 </form>
              
