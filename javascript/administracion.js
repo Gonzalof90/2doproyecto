@@ -8,7 +8,7 @@ let $contenedorPelicula = document.querySelector("#contenedorPelicula");
 let $agregarPelicula = document.querySelector("#agregarPelicula");
 let $opcionesDePeliculas = document.querySelector(".opcionesDePeliculas");
 
-var peliculas = [];
+let peliculas = [];
 const peliculasEnLocalStorage = localStorage.getItem("peliculas");
 const peliculasConvertidasJS = JSON.parse(peliculasEnLocalStorage);
 
@@ -51,7 +51,9 @@ const pintarPeliculas = () => {
       <td>${pelicula.descripcion}</td>
       <td>${pelicula.checked ? "✔️" : "✖️"}</td>
       <td class="opcionesDePeliculas">
-      <img src="../assets/icons/papelera-de-reciclaje.png" alt="papelera-de-reciclaje" style="width:2vw">
+      <button onclick="borrarPelicula(${pelicula.codigo})" class="btn btn-light">
+      <img src="../assets/icons/papelera-de-reciclaje.png" alt="papelera-de-reciclaje" style="width:2vw" >
+      </button>
       <img src="../assets/icons/editar.png" alt="papelera-de-reciclaje" style="width:2vw">
       <img src="../assets/icons/mensaje-destacado.png" alt="papelera-de-reciclaje" style="width:2vw"></td></tr>`;
     $contenedorPelicula.innerHTML += estructuraPelicula;
@@ -60,3 +62,9 @@ const pintarPeliculas = () => {
 pintarPeliculas();
 
 const generateId = () => Math.floor(Math.random() * 9999999);
+
+function borrarPelicula(id){
+  peliculas = peliculas.filter(pelicula=> pelicula.codigo !== parseInt(id))
+  guardarPeliculas(peliculas)
+  pintarPeliculas()
+}

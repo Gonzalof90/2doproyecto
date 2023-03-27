@@ -68,13 +68,7 @@
                   onsubmit=""
                   class="d-flex flex-column gap-2 form-control"
                 >
-                  <input
-                    id="codigoPelicula"
-                    type="hidden"
-                    
-                    required
-                    
-                  />
+                  <input id="codigoPelicula" type="hidden" required />
                   <input
                     type="text"
                     id="nombrePelicula"
@@ -108,14 +102,15 @@
                     >
                   </div>
                   <button
-                  for="createForm"
-                  id="agregarPelicula"
-                  type="submit"
-                  value="Agregar pelicula"
-                  class="btn btn-primary form-control"
-                >enviar</button>
+                    for="createForm"
+                    id="agregarPelicula"
+                    type="submit"
+                    value="Agregar pelicula"
+                    class="btn btn-primary form-control"
+                  >
+                    enviar
+                  </button>
                 </form>
-             
               </div>
             </div>
             <div class="modal-footer">
@@ -126,9 +121,7 @@
               >
                 Cancelar
               </button>
-              <button  class="btn btn-primary">
-                Agregar
-              </button>
+              <button class="btn btn-primary">Agregar</button>
             </div>
           </div>
         </div>
@@ -146,7 +139,7 @@
           </tr>
         </thead>
         <tbody id="contenedorPelicula">
-<!-- aquí se insertan las películas -->
+          <!-- aquí se insertan las películas -->
         </tbody>
       </table>
     </main>
