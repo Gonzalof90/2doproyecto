@@ -67,18 +67,28 @@
                   onsubmit=""
                   class="d-flex flex-column gap-2 form-control"
                 >
-                  <input id="codigoPelicula" hidden/>
+                  <input id="codigoPelicula" hidden />
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="tipo" id="tipo1" value="Pelicula" >
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="tipo"
+                      id="tipo1"
+                      value="Pelicula"
+                    />
                     <label class="form-check-label" for="tipo1">
                       Pelìcula
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="tipo" id="tipo2" value="Serie" >
-                    <label class="form-check-label" for="tipo2">
-                      Serie
-                    </label>
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="tipo"
+                      id="tipo2"
+                      value="Serie"
+                    />
+                    <label class="form-check-label" for="tipo2"> Serie </label>
                   </div>
                   <input
                     type="text"
@@ -98,6 +108,49 @@
                     id="descripcionPelicula"
                     type="text"
                     placeholder="Descripción breve"
+                    class="form-control"
+                    required
+                  />
+                  <!-- agrego info pero pero que no serà visible en tabla administraciòn -->
+                  <input
+                    id="urlImageBigSize"
+                    type="url"
+                    placeholder="Url Imagen Big Size (ej: http://xxxxxxxx.com)"
+                    class="form-control"
+                    required
+                  />
+                  <input
+                    id="urlImageSmallSize"
+                    type="url"
+                    placeholder="url Imagen Small Size (ej: http://xxxxxxxx.com)"
+                    class="form-control"
+                    required
+                  />
+                  <input
+                    id="urlTrailer"
+                    type="url"
+                    placeholder="Url trailer (ej: http://xxxxxxxx.com)"
+                    class="form-control"
+                    required
+                  />
+                  <input
+                    id="duracionHoras"
+                    type="number"
+                    placeholder="Duracion horas"
+                    class="form-control"
+                    required
+                  />
+                  <input
+                    id="duracionMinutos"
+                    type="number"
+                    placeholder="Duracion minutos"
+                    class="form-control"
+                    required
+                  />
+                  <input
+                    id="anioEstreno"
+                    type="number"
+                    placeholder="Año de estreno"
                     class="form-control"
                     required
                   />

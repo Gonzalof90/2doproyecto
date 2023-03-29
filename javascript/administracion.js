@@ -11,6 +11,13 @@ let $addMovie = document.querySelector("#addMovie");
 let $tipo1 = document.querySelector("#tipo1");
 let $tipo2 = document.querySelector("#tipo2");
 
+let $urlImageBigSize = document.querySelector("#urlImageBigSize");
+let $urlImageSmallSize = document.querySelector("#urlImageSmallSize");
+let $urlTrailer = document.querySelector("#urlTrailer");
+let $duracionHoras = document.querySelector("#duracionHoras");
+let $duracionMinutos = document.querySelector("#duracionMinutos");
+let $anioEstreno = document.querySelector("#anioEstreno");
+
 let isCreate = true;
 let peliculas = [];
 const peliculasEnLocalStorage = localStorage.getItem("peliculas");
@@ -20,38 +27,36 @@ if (peliculasConvertidasJS !== null) {
   peliculas = peliculasConvertidasJS;
 }
 
-$addMovie.addEventListener("click", function(){
-  $agregarPelicula.innerHTML = "Agregar Contenido"
-  $agregarPelicula.style.backgroundColor = "#0275d8"
-})
+$addMovie.addEventListener("click", function () {
+  $agregarPelicula.innerHTML = "Agregar Contenido";
+  $agregarPelicula.style.backgroundColor = "#0275d8";
+});
 
-$tipo1.addEventListener("change", function(){
-  if(isCreate){
-    if($tipo1.checked){
-    $agregarPelicula.innerHTML = "Agregar Pelìcula"
+$tipo1.addEventListener("change", function () {
+  if (isCreate) {
+    if ($tipo1.checked) {
+      $agregarPelicula.innerHTML = "Agregar Pelìcula";
     }
   }
-})
-$tipo2.addEventListener("change", function(){
-  if(isCreate){
-    if($tipo2.checked){
-    $agregarPelicula.innerHTML = "Agregar Serie"
+});
+$tipo2.addEventListener("change", function () {
+  if (isCreate) {
+    if ($tipo2.checked) {
+      $agregarPelicula.innerHTML = "Agregar Serie";
     }
   }
-})
+});
 
-
- function tipos() {
+function tipos() {
   let radios = document.getElementsByName("tipo");
-  let selected = Array.from(radios).find(radio => radio.checked);
-  return (selected.value);
+  let selected = Array.from(radios).find((radio) => radio.checked);
+  return selected.value;
 }
 
 $createForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   if (isCreate) {
-    
     const peliculaNueva = {
       codigo: generateId(),
       tipo: tipos(),
@@ -59,6 +64,12 @@ $createForm.addEventListener("submit", function (event) {
       genero: $generoPelicula.value,
       descripcion: $descripcionPelicula.value,
       checked: $isCheked.checked,
+      urlImageBigSize: $urlImageBigSize.value,
+      urlImageSmallSize: $urlImageSmallSize.value,
+      urlTrailer: $urlTrailer.value,
+      duracionHoras: $duracionHoras.value,
+      duracionMinutos: $duracionMinutos.value,
+      anioEstreno: $anioEstreno.value,
     };
     peliculas.push(peliculaNueva);
     guardarPeliculas(peliculas);
@@ -74,6 +85,12 @@ $createForm.addEventListener("submit", function (event) {
           genero: $generoPelicula.value,
           descripcion: $descripcionPelicula.value,
           checked: $isCheked.checked,
+          urlImageBigSize: $urlImageBigSize.value,
+          urlImageSmallSize: $urlImageSmallSize.value,
+          urlTrailer: $urlTrailer.value,
+          duracionHoras: $duracionHoras.value,
+          duracionMinutos: $duracionMinutos.value,
+          anioEstreno: $anioEstreno.value,
         };
       }
       return pelis;
@@ -96,9 +113,11 @@ const guardarPeliculas = (peliculasGuardada) => {
 const pintarPeliculas = (arr) => {
   $contenedorPelicula.innerHTML = "";
   arr.forEach((pelicula) => {
-    const estructuraPelicula = `<tr ><th scope="row" class="text-center">${pelicula.codigo}</th>
+    const estructuraPelicula = `<tr ><th scope="row" class="text-center">${
+      pelicula.codigo
+    }</th>
     <td class="text-center">${pelicula.tipo}</td>
-      <td class="text-center">${pelicula.nombre}</td>
+    <td class="text-center">${pelicula.nombre}</td>
       <td class="text-center">${pelicula.genero}</td>
       <td class="text-center">${pelicula.descripcion}</td>
       <td class="text-center">${pelicula.checked ? "✔️" : "✖️"}</td>
@@ -131,14 +150,21 @@ function borrarPelicula(id) {
 
 function editarPelicula(id) {
   isCreate = false;
-  $agregarPelicula.innerHTML = "Editar Contenido"
-  $agregarPelicula.style.backgroundColor = "green"
+  $agregarPelicula.innerHTML = "Editar Contenido";
+  $agregarPelicula.style.backgroundColor = "green";
+  
   const peliculaFound = peliculas.find((peli) => peli.codigo === parseInt(id));
   $codigoPelicula.value = peliculaFound.codigo;
   $nombrePelicula.value = peliculaFound.nombre;
   $generoPelicula.value = peliculaFound.genero;
   $descripcionPelicula.value = peliculaFound.descripcion;
   $isCheked.checked = peliculaFound.checked;
+  $urlImageBigSize.value = peliculaFound.urlImageBigSize;
+  $urlImageSmallSize.value = peliculaFound.urlImageSmallSize;
+  $urlTrailer.value = peliculaFound.urlTrailer;
+  $duracionHoras.value = peliculaFound.duracionHoras;
+  $duracionMinutos.value = peliculaFound.duracionMinutos;
+  $anioEstreno.value = peliculaFound.anioEstreno;
   console.log(id);
   console.log(peliculaFound);
 }
