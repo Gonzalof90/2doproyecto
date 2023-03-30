@@ -113,14 +113,14 @@ const guardarPeliculas = (peliculasGuardada) => {
 const pintarPeliculas = (arr) => {
   $contenedorPelicula.innerHTML = "";
   arr.forEach((pelicula) => {
-    const estructuraPelicula = `<tr  ><th scope="row" class="text-center">${
+    const estructuraPelicula = `<tr><th scope="row" class="text-center">${
       pelicula.codigo
     }</th>
     <td class="text-center">${pelicula.tipo}</td>
     <td class="text-center">${pelicula.nombre}</td>
       <td class="text-center">${pelicula.genero}</td>
       <td class="text-center">${pelicula.descripcion}</td>
-      <td class="text-center " ><img  src="${pelicula.urlImageSmallSize}" alt="papelera-de-reciclaje" style="width:8vw"  ></td>
+      <td class="text-center overflow-y-scroll"  ><img  src="${pelicula.urlImageSmallSize}" alt="papelera-de-reciclaje" style="width: 10vw"  ></td>
       <td class="text-center">${pelicula.checked ? "✔️" : "✖️"}</td>
       <td class="opcionesDePeliculas text-center">
       <button onclick="borrarPelicula(${
