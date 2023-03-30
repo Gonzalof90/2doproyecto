@@ -15,6 +15,6 @@ console.log(url1)
 console.log(url2)
 
 
-$image1.innerHTML = `<img  src="${url1}" alt=""><h2>Titulo:${nombre1}</h2>`
-$image2.innerHTML = `<img  src="${url2}" alt=""><h2>Titulo:${nombre2}</h2>`
-$image3.innerHTML = `<img  src="${url3}" alt=""><h2>Titulo:${nombre3}</h2>`
+$image1.innerHTML = `<h2>Titulo:${nombre1}</h2><img  src="${url1}" alt="">`
+$image2.innerHTML = `<h2>Titulo:${nombre2}</h2><img  src="${url2}" alt="">`
+$image3.innerHTML = `<h2>Titulo:${nombre3}</h2><img  src="${url3}" alt="">`

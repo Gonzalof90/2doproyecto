@@ -1,3 +1,16 @@
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '90db857e17msh0068c62e39d858cp1a1feajsn362ef8bb4d17',
+		'X-RapidAPI-Host': 'unogs-unogs-v1.p.rapidapi.com'
+	}
+};
+
+fetch('https://unogs-unogs-v1.p.rapidapi.com/search/titles?order_by=date&type=movie', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+
 let $createForm = document.querySelector("#createForm");
 let $codigoPelicula = document.querySelector("#codigoPelicula");
 let $nombrePelicula = document.querySelector("#nombrePelicula");
@@ -170,3 +183,5 @@ function editarPelicula(id) {
   console.log(id);
   console.log(peliculaFound);
 }
+
+
