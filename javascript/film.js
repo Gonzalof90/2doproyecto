@@ -17,14 +17,13 @@ const movieFound = movies.find(movie => movie.codigo === idMovie)
 console.log(movies)
 $nombrePelicula.textContent = movieFound.nombre
 $sinopsisPelicula.textContent = movieFound.descripcion 
-$bannerPelicula.textContent = movieFound.
-$añoPelicula.textContent = movieFound.
-$generoPelicula.textContent = movieFound.
-$duracionPelicula.textContent = movieFound.
-$contenedorTrailer.textContent = movieFound.
+$añoPelicula.textContent = movieFound.anioestreno
+$generoPelicula.textContent = movieFound.genero
+$duracionPelicula.textContent = movieFound.duracionenhoras
 
+const trailer = 
 
 $verTrailer.addEventListener("click" , () => {
-    $contenedorTrailer.innerHTML = `<iframe class=" " src="https://www.youtube.com/embed/yNXfOOL8824" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    $contenedorTrailer.innerHTML = `<iframe class=" " src=$[trailer]"https://www.youtube.com/embed/yNXfOOL8824" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
 })
 
