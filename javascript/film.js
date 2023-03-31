@@ -12,18 +12,21 @@ const idMovie = new URLSearchParams(window.location.search).get("idMovie")
 const infoLocalStorage = JSON.parse(localStorage.getItem("peliculas"))
 const movies = infoLocalStorage ? infoLocalStorage : []
 
-const movieFound = movies.find(movie => movie.codigo === idMovie)
+const movieFound = movies.find(movie => movie.codigo === parseInt(idMovie))
 
-console.log(movies)
+console.log(movieFound)
+
 $nombrePelicula.textContent = movieFound.nombre
 $sinopsisPelicula.textContent = movieFound.descripcion 
-$añoPelicula.textContent = movieFound.anioestreno
+$añoPelicula.textContent = movieFound.anioEstreno
 $generoPelicula.textContent = movieFound.genero
-$duracionPelicula.textContent = movieFound.duracionenhoras
+$duracionPelicula.textContent = movieFound.duracionHoras
 
-const trailer = 
+const trailer =  movieFound.urlTrailer.replace("watch?v=","embed/")
+
+$bannerPelicula.innerHTML = `<img  src="${movieFound.urlImageBigSize}" class=" img-fluid w-100 img" alt="pelicula"></img>`
 
 $verTrailer.addEventListener("click" , () => {
-    $contenedorTrailer.innerHTML = `<iframe class=" " src=$[trailer]"https://www.youtube.com/embed/yNXfOOL8824" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    $contenedorTrailer.innerHTML = `<iframe class="align-self-sm-center justify-content-center align-items-center" src="${trailer}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
 })
 
