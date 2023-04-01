@@ -1,0 +1,25 @@
+
+body {
+    background: linear-gradient(#6d3409, #34343B, #6d3409);
+}
+
+p {
+    color: #fdb37c;
+}
+img {
+    width: 67%;
+}
+button {
+    background: #fdb37c;
+}
+button a {
+    color:#34343B;
+    text-decoration: none;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #34343B;
+}
+button a:hover {
+    color: #fdb37c;
+}
