@@ -6,7 +6,7 @@ const options = {
 	}
 };
 
-fetch('https://unogs-unogs-v1.p.rapidapi.com/search/titles?order_by=date&type=movie', options)
+fetch('https://unogs-unogs-v1.p.rapidapi.com/search/titles?order_by=date&top250=20&start_rating=5&type=movie', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
