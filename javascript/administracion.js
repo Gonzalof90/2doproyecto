@@ -6,7 +6,7 @@ const options = {
 	}
 };
 
-fetch('https://unogs-unogs-v1.p.rapidapi.com/search/titles?order_by=date&top250=20&start_rating=5&type=movie', options)
+fetch('https://api.themoviedb.org/3/movie/550?api_key=05dca1457ad69952257055689327523d')
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
@@ -131,24 +131,30 @@ const pintarPeliculas = (arr) => {
     }</th>
     <td class="text-center">${pelicula.tipo}</td>
     <td class="text-center">${pelicula.nombre}</td>
-      <td class="text-center">${pelicula.genero}</td>
-      <td class="text-center">${pelicula.descripcion}</td>
-      <td class="text-center overflow-y-scroll"  ><img  src="${pelicula.urlImageSmallSize}" alt="papelera-de-reciclaje" style="width: 10vw"  ></td>
-      <td class="text-center">${pelicula.checked ? "✔️" : "✖️"}</td>
+      <td class="text-center contentResp">${pelicula.genero}</td>
+      <td class="text-center contentResp">${pelicula.descripcion}</td>
+      <td class="text-center contentResp">${pelicula.checked ? "✔️" : "✖️"}</td>
       <td class="opcionesDePeliculas text-center">
       <button onclick="borrarPelicula(${
         pelicula.codigo
-      })" class="btn btn-light">
+      })" class="btn btn-light btnTable">
       <img src="../assets/icons/papelera-de-reciclaje.png" alt="papelera-de-reciclaje" style="width:2vw" >
       </button>
       <button onclick="editarPelicula(${
         pelicula.codigo
-      })" class="btn btn-light"    data-bs-toggle="modal"
+      })" class="btn btn-light btnTable"    data-bs-toggle="modal"
       data-bs-target="#staticBackdrop">
       <img src="../assets/icons/editar.png" alt="icono_de_editar" style="width:2vw">
       </button>
+
+      <button onclick="destacarPelicula(${
+        pelicula.codigo
+      })" class="btn btn-light btnTable"    data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop">
+      <img src="../assets/icons/mensaje-destacado.png" alt="papelera-de-reciclaje" style="width:2vw"></td></tr>
+      </button>
       
-      <img src="../assets/icons/mensaje-destacado.png" alt="papelera-de-reciclaje" style="width:2vw"></td></tr>`;
+      `;
     $contenedorPelicula.innerHTML += estructuraPelicula;
     
   });
@@ -184,4 +190,5 @@ function editarPelicula(id) {
   console.log(peliculaFound);
 }
 
+{/* <td class="text-center overflow-y-scroll"  ><img  src="${pelicula.urlImageSmallSize}" alt="papelera-de-reciclaje" style="width: 10vw"  ></td> */}
 

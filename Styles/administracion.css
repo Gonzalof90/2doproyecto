@@ -1,0 +1,28 @@
+body{
+
+    background-color: #34343b
+    ;
+    color: #fc7c1c;
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+table{
+    background-color: #fdb37c;
+}
+
+
+@media (max-width:426px){
+    .contentResp{
+        display: none;
+    }
+    .btnTable{
+        width: 6vw;
+        padding: 2;
+    }
+    .opcionesDePeliculas{
+        /* display: flex;
+        flex-wrap: nowrap; */
+    }
+}
