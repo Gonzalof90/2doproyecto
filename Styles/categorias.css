@@ -3,9 +3,7 @@ li {
     box-shadow:#974101 5px 5px 4px;
 }
 
-li :hover {
-    li a {
-        border: #34343B solid 5px;
-        box-shadow:#fc7c1c 5px 5px 4px;
-    }
+
+li :hover img{
+border:groove;
 }
