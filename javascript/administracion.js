@@ -1,15 +1,17 @@
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '90db857e17msh0068c62e39d858cp1a1feajsn362ef8bb4d17',
-		'X-RapidAPI-Host': 'unogs-unogs-v1.p.rapidapi.com'
-	}
-};
+// const options = {
+//   method: "GET",
+//   headers: {
+//     "X-RapidAPI-Key": "90db857e17msh0068c62e39d858cp1a1feajsn362ef8bb4d17",
+//     "X-RapidAPI-Host": "unogs-unogs-v1.p.rapidapi.com",
+//   },
+// };
 
-fetch('https://api.themoviedb.org/3/movie/550?api_key=05dca1457ad69952257055689327523d')
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+// fetch(
+//   "https://api.themoviedb.org/3/movie/550?api_key=05dca1457ad69952257055689327523d"
+// )
+//   .then((response) => response.json())
+//   .then((response) => console.log(response))
+//   .catch((err) => console.error(err));
 
 let $createForm = document.querySelector("#createForm");
 let $codigoPelicula = document.querySelector("#codigoPelicula");
@@ -18,6 +20,7 @@ let $generoPelicula = document.querySelector("#generoPelicula");
 let $descripcionPelicula = document.querySelector("#descripcionPelicula");
 let $isCheked = document.querySelector("#isCheked");
 let $contenedorPelicula = document.querySelector("#contenedorPelicula");
+let $contenedorPeliculaDestacada = document.querySelector("#contenedorPeliculaDestacada");
 let $agregarPelicula = document.querySelector("#agregarPelicula");
 let $opcionesDePeliculas = document.querySelector(".opcionesDePeliculas");
 let $addMovie = document.querySelector("#addMovie");
@@ -31,8 +34,10 @@ let $duracionHoras = document.querySelector("#duracionHoras");
 let $duracionMinutos = document.querySelector("#duracionMinutos");
 let $anioEstreno = document.querySelector("#anioEstreno");
 
+
 let isCreate = true;
 let peliculas = [];
+
 const peliculasEnLocalStorage = localStorage.getItem("peliculas");
 const peliculasConvertidasJS = JSON.parse(peliculasEnLocalStorage);
 
@@ -149,14 +154,15 @@ const pintarPeliculas = (arr) => {
 
       <button onclick="destacarPelicula(${
         pelicula.codigo
-      })" class="btn btn-light btnTable"    data-bs-toggle="modal"
-      data-bs-target="#staticBackdrop">
+      })"  class="btn btn-light btnTable">
       <img src="../assets/icons/mensaje-destacado.png" alt="papelera-de-reciclaje" style="width:2vw"></td></tr>
       </button>
       
-      `;
+      `
+  
+      ;
+
     $contenedorPelicula.innerHTML += estructuraPelicula;
-    
   });
 };
 pintarPeliculas(peliculas);
@@ -165,15 +171,19 @@ const generateId = () => Math.floor(Math.random() * 9999999);
 
 function borrarPelicula(id) {
   peliculas = peliculas.filter((pelicula) => pelicula.codigo !== parseInt(id));
+  destacada = destacada.filter((pelic) => pelic.codigo !== parseInt(id));
   guardarPeliculas(peliculas);
+  guardarDestacada(destacada)
   pintarPeliculas(peliculas);
+  pintarPeliculaDestacada(destacada);
+
 }
 
 function editarPelicula(id) {
   isCreate = false;
   $agregarPelicula.innerHTML = "Editar Contenido";
   $agregarPelicula.style.backgroundColor = "green";
-  
+
   const peliculaFound = peliculas.find((peli) => peli.codigo === parseInt(id));
   $codigoPelicula.value = peliculaFound.codigo;
   $nombrePelicula.value = peliculaFound.nombre;
@@ -187,8 +197,67 @@ function editarPelicula(id) {
   $duracionMinutos.value = peliculaFound.duracionMinutos;
   $anioEstreno.value = peliculaFound.anioEstreno;
   console.log(id);
-  console.log(peliculaFound);
+ 
 }
 
-{/* <td class="text-center overflow-y-scroll"  ><img  src="${pelicula.urlImageSmallSize}" alt="papelera-de-reciclaje" style="width: 10vw"  ></td> */}
 
+let destacada = []
+function destacarPelicula(id) {
+peliculas = destacada.concat(peliculas)
+  destacada  =(peliculas.filter(pelicula=>pelicula.codigo===id))
+  console.log(destacada)
+ guardarDestacada(destacada)
+    // peliculas = peliculas.filter(newPelis=>newPelis.codigo!==id)
+    // console.log(peliculas)
+    peliculas  =(peliculas.filter(pelicula=>pelicula.codigo!==id))
+    guardarPeliculas(peliculas)
+    pintarPeliculas(peliculas)
+    pintarPeliculaDestacada(destacada)
+
+
+}
+
+const pintarPeliculaDestacada = (arr) => {
+  $contenedorPeliculaDestacada.innerHTML = "";
+  arr.forEach((pelicula) => {
+    const estructuraPelicula = `<tr><th scope="row" class="text-center">${
+      pelicula.codigo
+    }</th>
+    <td class="text-center">${pelicula.tipo}</td>
+    <td class="text-center">${pelicula.nombre}</td>
+      <td class="text-center contentResp">${pelicula.genero}</td>
+      <td class="text-center contentResp">${pelicula.descripcion}</td>
+      <td class="text-center contentResp">${pelicula.checked ? "✔️" : "✖️"}</td>
+      <td class="opcionesDePeliculas text-center">
+      <button onclick="borrarPelicula(${
+        pelicula.codigo
+      })" class="btn btn-light btnTable">
+      <img src="../assets/icons/papelera-de-reciclaje.png" alt="papelera-de-reciclaje" style="width:2vw" >
+      </button>
+      <button onclick="editarPelicula(${
+        pelicula.codigo
+      })" class="btn btn-light btnTable"    data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop">
+      <img src="../assets/icons/editar.png" alt="icono_de_editar" style="width:2vw">
+      </button>
+
+      <button onclick="destacarPelicula(${
+        pelicula.codigo
+      })"  class="btn btn-light btnTable">
+      <img src="../assets/icons/destacado.png" alt="papelera-de-reciclaje" style="width:2vw"></td></tr>
+      </button>
+      
+      `
+  
+      ;
+   
+    $contenedorPeliculaDestacada.innerHTML += estructuraPelicula;
+  });
+};
+
+function guardarDestacada(destacada){
+  const destacadaEnJSON = JSON.stringify(destacada);
+  const peliculasEnLocalStorage = localStorage.setItem(
+    "peliDestacada",
+    destacadaEnJSON)
+}
