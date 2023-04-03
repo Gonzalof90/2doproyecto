@@ -20,12 +20,16 @@ let $generoPelicula = document.querySelector("#generoPelicula");
 let $descripcionPelicula = document.querySelector("#descripcionPelicula");
 let $isCheked = document.querySelector("#isCheked");
 let $contenedorPelicula = document.querySelector("#contenedorPelicula");
-let $contenedorPeliculaDestacada = document.querySelector("#contenedorPeliculaDestacada");
+let $contenedorPeliculaDestacada = document.querySelector(
+  "#contenedorPeliculaDestacada"
+);
 let $agregarPelicula = document.querySelector("#agregarPelicula");
 let $opcionesDePeliculas = document.querySelector(".opcionesDePeliculas");
 let $addMovie = document.querySelector("#addMovie");
 let $tipo1 = document.querySelector("#tipo1");
 let $tipo2 = document.querySelector("#tipo2");
+let $tituloDestacada = document.querySelector("#tituloDestacada");
+let $tablaDestacada = document.querySelector("#tablaDestacada");
 
 let $urlImageBigSize = document.querySelector("#urlImageBigSize");
 let $urlImageSmallSize = document.querySelector("#urlImageSmallSize");
@@ -34,10 +38,9 @@ let $duracionHoras = document.querySelector("#duracionHoras");
 let $duracionMinutos = document.querySelector("#duracionMinutos");
 let $anioEstreno = document.querySelector("#anioEstreno");
 
-
 let isCreate = true;
 let peliculas = [];
-
+let destacada = [];
 const peliculasEnLocalStorage = localStorage.getItem("peliculas");
 const peliculasConvertidasJS = JSON.parse(peliculasEnLocalStorage);
 
@@ -45,6 +48,13 @@ if (peliculasConvertidasJS !== null) {
   peliculas = peliculasConvertidasJS;
 }
 
+let destacadaEnLocalStorage = localStorage.getItem("peliDestacada");
+let destacadaConvertidasJS = JSON.parse(destacadaEnLocalStorage);
+
+if (destacadaConvertidasJS !== null) {
+  destacada = destacadaConvertidasJS;
+}
+console.log(typeof({}))
 $addMovie.addEventListener("click", function () {
   $agregarPelicula.innerHTML = "Agregar Contenido";
   $agregarPelicula.style.backgroundColor = "#0275d8";
@@ -86,7 +96,6 @@ $createForm.addEventListener("submit", function (event) {
       urlImageSmallSize: $urlImageSmallSize.value,
       urlTrailer: $urlTrailer.value,
       duracionHoras: $duracionHoras.value,
-      duracionMinutos: $duracionMinutos.value,
       anioEstreno: $anioEstreno.value,
     };
     peliculas.push(peliculaNueva);
@@ -107,7 +116,6 @@ $createForm.addEventListener("submit", function (event) {
           urlImageSmallSize: $urlImageSmallSize.value,
           urlTrailer: $urlTrailer.value,
           duracionHoras: $duracionHoras.value,
-          duracionMinutos: $duracionMinutos.value,
           anioEstreno: $anioEstreno.value,
         };
       }
@@ -158,9 +166,7 @@ const pintarPeliculas = (arr) => {
       <img src="../assets/icons/mensaje-destacado.png" alt="papelera-de-reciclaje" style="width:2vw"></td></tr>
       </button>
       
-      `
-  
-      ;
+      `;
 
     $contenedorPelicula.innerHTML += estructuraPelicula;
   });
@@ -170,13 +176,16 @@ pintarPeliculas(peliculas);
 const generateId = () => Math.floor(Math.random() * 9999999);
 
 function borrarPelicula(id) {
-  peliculas = peliculas.filter((pelicula) => pelicula.codigo !== parseInt(id));
-  destacada = destacada.filter((pelic) => pelic.codigo !== parseInt(id));
+  peliculas = peliculas.filter((pelicula) => pelicula.codigo !== parseInt(id))
   guardarPeliculas(peliculas);
-  guardarDestacada(destacada)
   pintarPeliculas(peliculas);
+}
+function borrarPeliculaDestacada(id) {
+  destacada = []
+  console.log(destacada)
+  guardarDestacada(destacada);
   pintarPeliculaDestacada(destacada);
-
+  window.location.reload()
 }
 
 function editarPelicula(id) {
@@ -194,27 +203,20 @@ function editarPelicula(id) {
   $urlImageSmallSize.value = peliculaFound.urlImageSmallSize;
   $urlTrailer.value = peliculaFound.urlTrailer;
   $duracionHoras.value = peliculaFound.duracionHoras;
-  $duracionMinutos.value = peliculaFound.duracionMinutos;
   $anioEstreno.value = peliculaFound.anioEstreno;
   console.log(id);
- 
 }
 
-
-let destacada = []
 function destacarPelicula(id) {
-peliculas = destacada.concat(peliculas)
-  destacada  =(peliculas.filter(pelicula=>pelicula.codigo===id))
-  console.log(destacada)
- guardarDestacada(destacada)
-    // peliculas = peliculas.filter(newPelis=>newPelis.codigo!==id)
-    // console.log(peliculas)
-    peliculas  =(peliculas.filter(pelicula=>pelicula.codigo!==id))
-    guardarPeliculas(peliculas)
-    pintarPeliculas(peliculas)
-    pintarPeliculaDestacada(destacada)
-
-
+  peliculas = destacada.concat(peliculas);
+  destacada = peliculas.filter((pelicula) => pelicula.codigo === id);
+  console.log(destacada);
+  guardarDestacada(destacada);
+  peliculas = peliculas.filter((pelicula) => pelicula.codigo !== id);
+  guardarPeliculas(peliculas);
+  pintarPeliculas(peliculas);
+  pintarPeliculaDestacada(destacada);
+  window.location.reload()
 }
 
 const pintarPeliculaDestacada = (arr) => {
@@ -229,7 +231,7 @@ const pintarPeliculaDestacada = (arr) => {
       <td class="text-center contentResp">${pelicula.descripcion}</td>
       <td class="text-center contentResp">${pelicula.checked ? "✔️" : "✖️"}</td>
       <td class="opcionesDePeliculas text-center">
-      <button onclick="borrarPelicula(${
+      <button onclick="borrarPeliculaDestacada(${
         pelicula.codigo
       })" class="btn btn-light btnTable">
       <img src="../assets/icons/papelera-de-reciclaje.png" alt="papelera-de-reciclaje" style="width:2vw" >
@@ -241,23 +243,39 @@ const pintarPeliculaDestacada = (arr) => {
       <img src="../assets/icons/editar.png" alt="icono_de_editar" style="width:2vw">
       </button>
 
-      <button onclick="destacarPelicula(${
+      <button onclick="quitarDestacadoPelicula(${
         pelicula.codigo
       })"  class="btn btn-light btnTable">
       <img src="../assets/icons/destacado.png" alt="papelera-de-reciclaje" style="width:2vw"></td></tr>
       </button>
       
-      `
-  
-      ;
-   
+      `;
+
     $contenedorPeliculaDestacada.innerHTML += estructuraPelicula;
   });
 };
+pintarPeliculaDestacada(destacada)
 
-function guardarDestacada(destacada){
-  const destacadaEnJSON = JSON.stringify(destacada);
-  const peliculasEnLocalStorage = localStorage.setItem(
+function guardarDestacada(arr) {
+  let destacadaEnJSON = JSON.stringify(arr);
+  destacadaEnLocalStorage = localStorage.setItem(
     "peliDestacada",
-    destacadaEnJSON)
+    destacadaEnJSON
+  );
+}
+console.log(typeof(0))
+if(Object.entries(destacada).length===0){
+  $tituloDestacada.style.visibility = "hidden"
+  $tablaDestacada.style.visibility = "hidden"
+}else{
+  $tituloDestacada.style.visibility = "visible"
+  $tablaDestacada.style.visibility = "visible"
+}
+
+function quitarDestacadoPelicula(id){
+  peliculas = destacada.concat(peliculas);
+  borrarPeliculaDestacada(id)
+  guardarPeliculas(peliculas);
+  pintarPeliculas(peliculas);
+  window.location.reload()
 }

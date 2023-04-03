@@ -136,15 +136,8 @@
                   />
                   <input
                     id="duracionHoras"
-                    type="number"
-                    placeholder="Duracion horas"
-                    class="form-control"
-                    required
-                  />
-                  <input
-                    id="duracionMinutos"
-                    type="number"
-                    placeholder="Duracion minutos"
+                    type="text"
+                    placeholder="Duracion (ej: 2:10)"
                     class="form-control"
                     required
                   />
@@ -190,8 +183,28 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> 
+       
+      <h2 class="text-center">Administrar contenido</h2>
       <table class="table  table-responsive rounded-5 my-5 px-4 table-sm">
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">Código</th>
+            <th scope="col" class="text-center">Tipo</th>
+            <th scope="col" class="text-center">Nombre</th>
+            <th scope="col" class="text-center contentResp">Gènero</th>
+            <th scope="col" class="text-center contentResp">Descripción</th>
+            <!-- <th scope="col" class="text-center">Portada</th> -->
+            <th scope="col" class="text-center contentResp">Publicado</th>
+            <th scope="col" class="text-center">Opciones</th>
+          </tr>
+        </thead>
+        <tbody id="contenedorPelicula">
+          <!-- aquí se insertan las películas -->
+        </tbody>
+      </table>
+      <h2  id="tituloDestacada" class="text-center">Contenido Destacado</h2>
+      <table id="tablaDestacada" class="table table-responsive rounded-5 my-5 px-4 table-sm">
         <thead>
           <tr>
             <th scope="col" class="text-center">Código</th>
@@ -207,10 +220,7 @@
         <tbody id="contenedorPeliculaDestacada">
           <!-- aquí se insertan las películas -->
         </tbody>
-        <tbody id="contenedorPelicula">
-          <!-- aquí se insertan las películas -->
-        </tbody>
-      </table>
+      </table >
     </main>
   </body>
 </html>
