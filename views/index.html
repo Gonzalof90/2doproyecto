@@ -17,6 +17,7 @@
     <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
         crossorigin="anonymous">
         <link rel="stylesheet" href="/Styles/categorias.css">
+        <script src="/javascript/index.js" defer></script>
 </head>
 
 <body>
@@ -25,8 +26,8 @@
     </header>
     <main>
         <section>
-            <div class="destacado">
-
+            <div id="destacado" class="destacado">
+                
             </div>
         </section>
         <section>
@@ -35,10 +36,10 @@
             <div class="categorias">
                 <h2>Categoría 1</h2>
                 <div class="swiffy-slider slider-item-show5">
-                    <ul class="slider-container m-5">
-                        <li>
+                    <ul id="contenedorSlider01" class="slider-container m-5">
+                    <!--  <li>
                             <a href="http://">
-                            <img src="https://www.themoviedb.org/t/p/w440_and_h660_face/gh2bmprLtUQ8oXCSluzfqaicyrm.jpg"
+                            <img onclick="enviarInfoFilm()" src="${urlImageSmallSize}"
                                 width="100%" alt="...">
                             </a>
                         </li>
@@ -71,7 +72,7 @@
                             <img src="https://www.themoviedb.org/t/p/w440_and_h660_face/uYNgC4Zd9NMcpMVug9NTgeIqfTy.jpg"
                                 width="100%" alt="...">
                                 </a>
-                        </li>
+                        </li>-->  
                         
                     </ul>
 
