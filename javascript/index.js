@@ -4,12 +4,17 @@ let destacada = destacadaConvertidasJS
 
 
 let [pelicula] = destacada
-let {urlImageBigSize} = pelicula
+let {urlImageBigSize,nombre,genero,descripcion} = pelicula
 
 let $contenedorSlider01 = document.querySelector("#contenedorSlider01")
 
 let $destacado = document.querySelector("#destacado")
-$destacado.innerHTML = `<img src="${urlImageBigSize}" class="" alt="Pelicula destacada">`
+$destacado.innerHTML = `<div class="contenedor d-flex">
+<img class="w-100" src="${urlImageBigSize}" />
+<div class="centrado text-light bg-dark display-5">Titulo:${nombre}<br>Genero:${genero}<br>${descripcion}</div>
+</div>`
+
+/*<div class="w-100 bg-dark" style="position: relative;">asdasdas<img src="${urlImageBigSize}"class="w-50" alt="Pelicula destacada" draggable="false" style=" position: absolute; z-index: 2;"></div>*/
 
 /* Envio a detalles  */
 
