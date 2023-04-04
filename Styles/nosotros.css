@@ -23,6 +23,11 @@ body {
     background: linear-gradient(#fc7c1c,#6d3409);
 }
 #main {
+    width: 80%;
     background-color: black;
     opacity:0.92;
+}
+
+#nos:hover {
+    transform: scale(1.1);
 }

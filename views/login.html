@@ -5,28 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/Styles/login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
   <title>Login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <script src="../javascript/login.js" defer></script>
 </head>
 <body>
   <main> 
     <div class="login my-3 ">
       <div class="avatar">
-        <img src="/assets/imagenes/avatar/120199793_10220451224003117_5283184509496923892_n.jpg">
+        <img classs="avatar" src="/assets/avatar/47774.png">
       </div>
       <h2>Login</h2>
       <h3>Bienvenido de nuevo <!--nombre de usuario--> </h3>
       <form class="login-form">
         <div class="textbox">
-          <input type="email" placeholder="Usuario" required>
+          <input type="email" placeholder="Usuario" required="">
         </div>
         <div class="textbox">
-          <input type="password" placeholder="contraseña" required>
+          <input type="password" placeholder="contraseña" required="">
         </div>
         <button type="submit">Login</button>
         <a href="" class="my-2 mx-2 text-center" required="false" data-bs-toggle="modal" data-bs-target="#exampleModal">Recuperar contraseña</a>
-        <a href="" claass="my-2 mx-2 text-center required="false" data-bs-toggle="modal" data-bs-target="#exampleModal2">Registrate aqui! </a>
+        <a href="" claass="my-2 mx-2 text-center" required="false" data-bs-toggle="modal" data-bs-target="#exampleModal2">Registrate aqui! </a>
       </form>
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -39,13 +42,13 @@
           <div class="modal-body">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Ingresa tu correo electronico para recuperar tu contraseña.</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required> <br>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required=""> <br>
               <p>Te llegará proximamente un correo con tu nueva contraseña.</p>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary" id="botones">Guardar</button>
+            <button type="button" class="btn" id="enviarMail">Enviar e-mail</button>
           </div>
         </div>
       </div>
@@ -60,13 +63,13 @@
           </div>
           <div class="modal-body">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Ingrese su correo electronico</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" required> <br>
+              <label for="exampleInputEmail1" class="form-label" >Ingrese su correo electronico</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" required=""> <br>
               <label for="exampleInputPassword" class="form-label">Ingrese su password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" required>
+              <input type="password" class="form-control" id="exampleInputPassword1" required="">
             </div>
           </div>
-          <div class="container  my-5">
+          <div class="container  my-5" id="registro">
             <div class="row text-center my-2">
               <div class="col-12 my-2">Iniciar sesion</div>
             </div>
@@ -99,7 +102,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary" id="botones">Regristarse </button>
+            <button type="button" class="btn" id="registrarse">Regristarse </button>
           </div>
         </div>
       </div>
