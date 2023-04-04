@@ -9,7 +9,7 @@ let {urlImageBigSize} = pelicula
 let $contenedorSlider01 = document.querySelector("#contenedorSlider01")
 
 let $destacado = document.querySelector("#destacado")
-$destacado.innerHTML = `<img src="${urlImageBigSize}" class="" alt="Pelicula destacada">`
+$destacado.innerHTML = `<img src="${urlImageBigSize}" class="w-100" alt="Pelicula destacada" draggable="false">`
 
 /* Envio a detalles  */
 
