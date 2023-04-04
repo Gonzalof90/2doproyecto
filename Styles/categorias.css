@@ -8,7 +8,7 @@ li :hover img{
 border:groove;
 }
 
-.destacado {
-    border: #fc7c1c ridge 5px;
-    box-shadow:#974101 5px 5px 4px;
+#destacado {
+    box-shadow:#974101 35px 5px 34px;
+    ;
 }
