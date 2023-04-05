@@ -29,3 +29,11 @@ border:groove;
     left: 11%;
     transform: translate(-50%, -50%);
 }
+
+main {
+    border: #34343B ridge;
+}
+
+body , main {
+    background:linear-gradient(#34343B,#6d3409,#fdb37c,#6d3409,#34343B);
+}
