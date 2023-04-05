@@ -123,7 +123,7 @@ $createForm.addEventListener("submit", function (event) {
       return movie;
     });
   }
-  const { outstanding, noOutstanding  } = getMoviesFilter(movies)
+  const { outstanding, noOutstanding } = getMoviesFilter(movies);
   saveMovies(movies, "movies");
   paintMovies(noOutstanding, $containerMovie);
   paintMovies(outstanding, $containerMovieOutstanding);
@@ -174,13 +174,13 @@ const paintMovies = (arr, container) => {
   });
 };
 
-const { outstanding, noOutstanding  } = getMoviesFilter(movies)
+const { outstanding, noOutstanding } = getMoviesFilter(movies);
 paintMovies(noOutstanding, $containerMovie);
 
 function removeMovie(id) {
   movies = movies.filter((movie) => movie.code !== parseInt(id));
   saveMovies(movies, "movies");
-  const { outstanding, noOutstanding  } = getMoviesFilter(movies)
+  const { outstanding, noOutstanding } = getMoviesFilter(movies);
   paintMovies(noOutstanding, $containerMovie);
   paintMovies(outstanding, $containerMovieOutstanding);
 }
@@ -190,6 +190,12 @@ function editMovie(id) {
   const movieFound = movies.find((movie) => movie.code === parseInt(id));
   $btnSubmitCreate.innerHTML = "Editar Contenido";
   $btnSubmitCreate.style.backgroundColor = "green";
+
+  if (movieFound.type === "movie") {
+    $type1.checked = true;
+  } else {
+    $type2.checked = true;
+  }
 
   $codeMovie.value = movieFound.code;
   $nameMovie.value = movieFound.name;
@@ -213,7 +219,7 @@ function toggleOutstandingMovie(id) {
     }
     return movie;
   });
-  const { outstanding, noOutstanding  } = getMoviesFilter(movies)
+  const { outstanding, noOutstanding } = getMoviesFilter(movies);
 
   if (outstanding.length) {
     $sectionTable2.classList.add("d-block");
