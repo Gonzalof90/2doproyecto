@@ -1,14 +1,19 @@
 header {
-    background: linear-gradient(#6d3409, #34343B)
+    background: linear-gradient(#6d3409, #34343B);
+    box-shadow: 1px 5px 10px #fdb37c;
 }
 header a {
     -webkit-text-stroke: 1px black;
 }
-header .nav-link:hover {
-    background-color: #fdb37c;
-    border-radius: 5px;
+header a:hover {
+    color: #fdb37c !important;
 }
-
+body {
+    background: linear-gradient(#34343B, #6d3409, #34343B)
+}
+h2 {
+    color: #fdb37c;
+}
 footer {
     background: linear-gradient(#34343B, #6d3409);
     color: #fc7c1c;
@@ -16,6 +21,7 @@ footer {
     font-size: 1.5rem;
     text-decoration: none;
     -webkit-text-stroke: 1px black;
+    box-shadow: 1px -5px 10px #fdb37c;
 }
 
 footer ul {
