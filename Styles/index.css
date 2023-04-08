@@ -18,14 +18,23 @@ border:groove;
     display: inline-block;
     text-align: center;
 }
+
 .texto-encima{
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top:10vw;
+    left:10vw;
 }
+
 .centrado{
+    opacity:50%;
+    top:15vw;
     position: absolute;
-    top: 80%;
-    left: 11%;
-    transform: translate(-50%, -50%);
+}
+
+main {
+    border: #34343B ridge;
+}
+
+body , main {
+    background:linear-gradient(#34343B,#6d3409,#fdb37c,#6d3409,#34343B);
 }

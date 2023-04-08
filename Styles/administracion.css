@@ -13,6 +13,7 @@ table{
 }
 
 
+
 @media (max-width:426px){
     .contentResp{
         display: none;
@@ -20,5 +21,6 @@ table{
     .btnTable{
         width: 6vw;
         padding: 2;
+        
     }
 }

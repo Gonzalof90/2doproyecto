@@ -23,11 +23,76 @@ body {
     background: linear-gradient(#fc7c1c,#6d3409);
 }
 #main {
-    width: 80%;
+    width: 85%;
     background-color: black;
     opacity:0.92;
 }
 
 #nos:hover {
     transform: scale(1.1);
+
+
 }
+    .testimotionals .card {
+      
+      position:relative;
+      overflow:hidden;
+      width:8rem;
+      margin:0 auto;
+      background:#333;
+      padding:20px;
+      box-sizing:border-box;
+      text-align:center;
+      box-shadow:0 10px 40px rgba(0,0,0,.5);
+    }
+    .testimotionals .card .layer {
+      z-index:1;
+      position:absolute;
+      top:calc(100% - 2px);
+      height:100%;
+      width:100%;
+      left:0;
+      background:linear-gradient(to left , orange, tomato);
+      transition:0.5s;
+      
+    }
+    
+    .testimotionals .card .content {
+      z-index:2; 
+      position:relative;
+    }
+    
+    .testimotionals .card:hover  .layer{
+      top:0;
+    }
+    
+    .testimotionals .card .content p {
+      line-height:24px;
+      color:#fff;
+      
+    }
+    .testimotionals .card .content .image {
+      width:100px; height:100px;
+      margin:0 auto;
+      border-radius:50%;
+      overflow:hidden;
+      border: 4px solid white;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      
+    }
+    
+    .testimotionals .card .conte nt .details p {
+    color:white;
+    }
+    .testimotionals .card .content .details p span {
+    color:purple;
+      transition:0.5s;
+    }
+    .testimotionals .card:hover .content .details p span {
+      color:white;
+      position:relative;
+    }
+    
+    body{
+      margin-bottom:20px;
+    }
