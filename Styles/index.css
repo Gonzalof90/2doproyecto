@@ -1,5 +1,5 @@
 main li {
-    border: #fc7c1c ridge 5px;
+    border: #fc7c1c groove 5px;
     box-shadow:#974101 5px 5px 4px;
 }
 
@@ -32,9 +32,8 @@ border:groove;
 }
 
 main {
-    border: #34343B ridge;
 }
 
 body , main {
-    background:linear-gradient(#34343B,#6d3409,#fdb37c,#6d3409,#34343B);
+    background-color:black; 
 }
