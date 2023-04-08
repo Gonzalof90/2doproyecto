@@ -17,27 +17,18 @@ body {
     animation: 
     pan 6s infinite alternate linear;
 }
-
-#nos {
-    background-color: #fdb37c;
-    background: linear-gradient(#fc7c1c,#6d3409);
-}
 #main {
-    width: 85%;
-    background-color: black;
-    opacity:0.92;
-}
-
-#nos:hover {
-    transform: scale(1.1);
-
-
+  margin: 30px;
+  padding:30px;
+  background-color: #000;
+  opacity:0.90;
 }
     .testimotionals .card {
       
       position:relative;
       overflow:hidden;
-      width:8rem;
+      width:10rem;
+      height:25rem ;
       margin:0 auto;
       background:#333;
       padding:20px;
@@ -69,10 +60,12 @@ body {
     .testimotionals .card .content p {
       line-height:24px;
       color:#fff;
+      height: 16vh;
       
     }
     .testimotionals .card .content .image {
-      width:100px; height:100px;
+      width:100px; 
+      height:100px;
       margin:0 auto;
       border-radius:50%;
       overflow:hidden;
@@ -83,16 +76,16 @@ body {
     
     .testimotionals .card .conte nt .details p {
     color:white;
+    margin-top: 30px;
     }
     .testimotionals .card .content .details p span {
-    color:purple;
+    color:#fc7c1c;
       transition:0.5s;
+      margin-top: 10px;
+    
     }
     .testimotionals .card:hover .content .details p span {
       color:white;
       position:relative;
     }
     
-    body{
-      margin-bottom:20px;
-    }
