@@ -1,81 +1,250 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-}
+/*:root {
+	--purple-dark: #170312;
+	--purple-medium: #33032d;
+    --purple-light: #531253;
+    --gray-light: #eaeaea;
+    --white: #f4fffd;
+}*/
 
 body {
-    background: #f2f2f2;
-    font-family: "open Sans", sans-serif;
-    font-size: 16px;
+	font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
 }
 
-.contenedor {
-    width: 90%;
-    max-width: 1000px;
-    background: #fff;
-    padding: 40px;
-    margin: 20px auto;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+p {
+	font-size: 22px;
 }
 
-.contebedor h1 {
-    font-size: 30px;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 25px;
-    color: #15cf8a;
+/* ------------------------- */
+/* Header */
+/* ------------------------- */
+.contenido-header {
+	width: 100%;
+	height: 100vh;
+	background-image: url(/assets/Contacto.png);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
-.contenedor {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
+.contenido-header .fondo {
+	width: 0%;
+	height: 100%;
+	max-width: 100%;
+	background-image: url(/assets/bg-top.png);
 }
 
-.contenedor .info,
-.contenedor .formulario {
-    width: 50%;
+.contenido-header .texto {
+	width: calc(100vw - 20px);
+	height: 100vh;
+	font-size: 90px;
+	font-weight: 400;
+	font-family: 'Noto Serif', serif;
+	font-style: italic;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #1CB698;
+	mix-blend-mode: multiply;
 }
-
-.info {
-    padding-left: 10px;
+.contacto .contenido-seccion .form-title{
+    font-weight: normal;
+    font-family: sans-serif;
+    color: #1CB698;
 }
-
-.info .col {
-    width: 100%;
-    display: flex;
-    margin-bottom: 15px;
-    font-size: 16px;
-    align-items: center;
-    flex-wrap: nowrap;
-}
-
-.info .col .icono {
-    color: #15cf8a;
-    margin-right: 10px;
-}
-
-.info .col p {
-    color: #999;
-}
-
-.info .redes-s {
-    width: 100%;
-    overflow: hidden;
-    padding-left: 25px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.info .redes-s a {
-    display: flex;
-    width: 40px;
-    height: 40px;
-    background: #15cf8a;
+.contacto .contenido-seccion .form-title .span {
     color: #fff;
+}
+
+/* ------------------------- */
+/* NAVBAR */
+/* ------------------------- */
+/*.menu {
+	background-color: var(--purple-medium);
+    background-color: #292828;
+	width: 100%;
+	position: sticky;
+	top: 0;
+	padding: 5px;
+	z-index: 999;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	font-family: 'Noto Serif', serif;
+	font-style: italic;
+	margin-bottom: 60px;
+}
+
+.menu a {
+	display: inline-block;
+	padding: 10px 30px;
+	font-size: 26px;
+	background-color: var(--purple-medium);
+	margin: 0 10px;
+	transition: .5s ease all;
+	color: var(--gray-light);
+    color: #fff;
+	text-decoration: none;
+}
+
+.menu a:hover {
+	transform: translateY(18px);
+	background-color: var(--purple-light);
+    background-color: #1CB698;
+}*/
+ /* SECCION CONTACTO */
+.contacto{
+    background-image: url(/assets/contact_bg.png);
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 0;
+}
+.contacto .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+.contacto h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+.contacto .fila{
+    display: flex;
+}
+.contacto .col{
+    width: 50%;
+    padding: 10px;
+    position: relative;
+}
+.contacto .col input, .contacto .col textarea{
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    margin-bottom: 20px;
+    background-color: #252A2E;
+    color: #fff;
+    font-size: 18px;
+}
+
+.form-txt{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.form-txt a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+.contacto button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+.contacto button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #1CB698;
+    z-index: -1;
+    transition: 1s;
+}
+.contacto button:hover .overlay{
+    width: 100%;
+}
+.contacto .col img{
+    width: 100%;
+}
+.contacto .col .info{
+    position: absolute;
+    top: 40%;
+    background-color: #252A2E;
+    padding: 20px;
+    max-width:  350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.contacto .col .info ul{
+    list-style: none;
+}
+.contacto .col .info ul li{
+    margin-bottom: 20px;
+}
+.contacto .col .info ul li i{
+    color: #1CB698;
+    display: inline-block;
+    margin-right: 20px;
+}
+footer{
+    background-color: #252A2E;
+    color: #fff;
+    padding: 50px 0 30px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+footer .redes{
+    margin-bottom: 20px;
+}
+/*footer .redes a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
+}*/
+footer .redes a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 20px;
+    transition: .3s;
+}
+footer .redes a:hover{
+    background-color: #1CB698;
+}
+footer .arriba{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #1CB698;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 18px;
 }
