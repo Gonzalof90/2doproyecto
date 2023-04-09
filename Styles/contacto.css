@@ -27,7 +27,7 @@ p {
 .contenido-header {
 	width: 100%;
 	height: 100vh;
-	background-image: url(/assets/Contacto.png);
+	background-image: url(../assets/imgcontacto/Contacto.png);
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
@@ -37,7 +37,7 @@ p {
 	width: 0%;
 	height: 100%;
 	max-width: 100%;
-	background-image: url(/assets/bg-top.png);
+	background-image: url(../assets/imgcontacto/contact_bg.png);
 }
 
 .contenido-header .texto {
@@ -100,7 +100,7 @@ p {
 }*/
  /* SECCION CONTACTO */
 .contacto{
-    background-image: url(/assets/contact_bg.png);
+    background-image: url(../assets/imgcontacto/contact_bg.png);
     background-color: #1e2326;
     color: #fff;
     padding: 50px 0;
