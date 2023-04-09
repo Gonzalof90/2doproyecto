@@ -1,28 +1,181 @@
-* { box-sizing:border-box;}
-
-html, body { height: 100%; }
-
-@keyframes pan {
-    100% {background-position: 15% 50%; }
-}
 
 body {
     display:grid;
     place-items: center;
     margin:0;
     padding:0 24px;
-    background-image: url(/assets/bg/low-poly-grid-haikei\ \(1\).svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    animation: 
-    pan 6s infinite alternate linear;
+    background-color: #000!important;
 }
+header {
+  background-color: black;
+  width: 100%;
+  box-shadow: 1px 5px 10px #fc7c1c
+}
+header a {
+  -webkit-text-stroke: 1px black;
+  color: #6d3409 !important;;
+  letter-spacing: 5px;
+  cursor:pointer;
+  text-transform:uppercase;
+  transition: 1s;
+}
+header a:hover {
+  color: #fff !important;
+  text-shadow: 0 0 5px #fc7c1c,
+  0 0 25px #fc7c1c,
+  0 0 50px #fc7c1c,
+  0 0 100px #fc7c1c;
 
-#nos {
-    background-color: #fdb37c;
-    background: linear-gradient(#fc7c1c,#6d3409);
 }
 #main {
-    background-color: black;
-    opacity:0.92;
+  margin: 30px;
+  padding:30px;
+  background-color: #6d3409;
+  opacity:0.85;
 }
+    .testimotionals .card {
+      
+      position:relative;
+      overflow:hidden;
+      width:10rem;
+      height:25rem ;
+      margin:0 auto;
+      background:#333;
+      padding:20px;
+      box-sizing:border-box;
+      text-align:center;
+      box-shadow:0 10px 40px rgba(0,0,0,.5);
+    }
+    .testimotionals .card .layer {
+      z-index:1;
+      position:absolute;
+      top:calc(100% - 2px);
+      height:100%;
+      width:100%;
+      left:0;
+      background:linear-gradient(to right , #974101, #fdb37c);
+      transition:0.5s;
+      
+    }
+    
+    .testimotionals .card .content {
+      z-index:2; 
+      position:relative;
+    }
+    
+    .testimotionals .card:hover  .layer{
+      top:0;
+    }
+    
+    .testimotionals .card .content p {
+      line-height:24px;
+      color:#000;
+      height: 16vh;
+      
+    }
+    .testimotionals .card .content .image {
+      width:100px; 
+      height:100px;
+      margin:0 auto;
+      border-radius:50%;
+      overflow:hidden;
+      border: 4px solid white;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      
+    }
+    
+    .testimotionals .card .conte nt .details p {
+    color:white;
+    margin-top: 30px;
+    }
+    .testimotionals .card .content .details p span {
+    color:#fc7c1c;
+      transition:0.5s;
+      margin-top: 10px;
+    
+    }
+    .testimotionals .card:hover .content .details p span {
+      color:white;
+      position:relative;
+    }
+    
+    footer {
+      background-color: black;
+      color: #fff !important;
+      text-shadow: 0 0 5px #fc7c1c,
+      0 0 25px #fc7c1c,
+      0 0 50px #fc7c1c,
+      0 0 100px #fc7c1c;
+      font-weight: bold;
+      font-size: 2.5rem;
+      text-decoration: none;
+      -webkit-text-stroke: 1px black;
+  
+  }
+  
+  footer ul {
+      list-style: none;
+  }
+  footer i {
+      -webkit-text-stroke: 1px black;
+      color: #6d3409 !important;;
+      letter-spacing: 5px;
+      cursor:pointer;
+      text-transform:uppercase;
+      transition: 1s;
+  }
+  
+  footer a {
+      text-decoration: none;
+      -webkit-text-stroke: 1px black;
+      color: #6d3409 !important;
+      letter-spacing: 5px;
+      cursor:pointer;
+      text-transform:uppercase;
+      transition: 1s;
+      font-size: 1.5rem;
+  }
+  
+  footer a:hover {
+      font-size: 1.7rem;
+      color: #fff !important;
+      text-shadow: 0 0 5px #fff,
+      0 0 25px #fff,
+      0 0 50px #fff,
+      0 0 100px #fff;
+  }
+  #Facebook {
+      color: #fff !important;
+      text-shadow: 0 0 5px #3b5998,
+      0 0 25px #3b5998,
+      0 0 50px #3b5998,
+      0 0 100px #3b5998;
+  }
+  #Instagram {
+      color: #fff !important;
+      text-shadow: 0 0 5px #E1306C,
+      0 0 25px #E1306C,
+      0 0 50px #E1306C,
+      0 0 100px #E1306C;
+  }
+  #Youtube {
+      color: #fff !important;
+      text-shadow: 0 0 5px #c4302b,
+      0 0 25px #c4302b,
+      0 0 50px #c4302b,
+      0 0 100px #c4302b;
+  }
+  #Github {
+      color: #fff !important;
+      text-shadow: 0 0 5px #171515,
+      0 0 25px #171515,
+      0 0 50px #171515,
+      0 0 100px #171515;
+  }
+  #Twitter {
+    color: #fff !important;
+      text-shadow: 0 0 5px #00acee,
+      0 0 25px #00acee,
+      0 0 50px #00acee,
+      0 0 100px #00acee;
+  }

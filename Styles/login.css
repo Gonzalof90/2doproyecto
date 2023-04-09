@@ -29,6 +29,7 @@ body {
     background: #161616;
     text-align:center;
     opacity:0.95;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 @media (width >= 450px) {
@@ -93,7 +94,7 @@ body {
     height: 60px;
     outline: none;
     padding:0;
-    font-family:inherit;
+    font-family: 'Josefin Sans', sans-serif;
     font-size:16px;
     border-radius:8px;
 }
@@ -125,7 +126,13 @@ body {
     text-decoration:none;
 }
 
-#botones {
+#enviarMail, #registrarse{
     background-color: #fc7c1c;
 }
 
+.modal-content, #registro {
+    font-family: 'Josefin Sans', sans-serif;
+}
+.avatar {
+    width:fit-content;
+}

@@ -26,6 +26,7 @@
   <script src="/javascript/index.js" defer></script>
   <link rel="stylesheet" href="/Styles/home.css" />
 </head>
+<body>
   <header>
     <nav class="navbar navbar-expand-md fs-4 fw-bold shadow p-3 mb-5 bg-body-tertiary rounded">
       <div class="container justify-content-center">
@@ -66,7 +67,6 @@
       </div>
     </nav>
   </header>
-  <body>
   <main class="">
     <section>
       <div id="destacado" class="">
@@ -79,7 +79,7 @@
       <div class="categorias">
         <h2>Categoría 1</h2>
         <div class="swiffy-slider slider-item-show5 slider-nav-mousedrag">
-          <ul id="contenedorSlider01" class="slider-container m-5">
+          <ul id="contenedorSlider01" class="slider-container">
           </ul>
 
           <button type="button" class="slider-nav"></button>
@@ -93,7 +93,7 @@
       <div class="categorias">
         <h2>Categoría 2</h2>
         <div class="swiffy-slider slider-item-show5">
-          <ul class="slider-container m-5">
+          <ul class="slider-container">
             <li>
               <a href="http://">
                 <img src="https://www.themoviedb.org/t/p/w440_and_h660_face/gh2bmprLtUQ8oXCSluzfqaicyrm.jpg" draggable="false"
@@ -193,30 +193,30 @@
       </div>
     </section>
   </main>
-</body>
   <footer>
-    <div class="container">
-      <div class="row d-flex justify-content-between align-items-center">
-        <div class="col-sm-12 col-md-6 col-lg-6">
-          <p>Todos los derechos reservados</p>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 ps-1">
-          <p>Redes Sociales</p>
-          <ul>
-            <li>
-              <a href="#"><i class="bi bi-facebook"></i> Facebook</a>
+    <div class="container d-flex justify-content-center">
+      <div class="row d-flex justify-content-center">
+        <div class="d-flex justify-content-center flex-column col-sm-12 col-md-6 col-lg-6 ps-1">
+          <p class="text-center my-3">Redes Sociales</p>
+          <ul class=" d-flex flex-direction-row justify-content-around">
+            <li class="m-5">
+              <a href="#"><i class="bi bi-facebook d-flex justify-content-center" id="Facebook"></i> Facebook</a>
             </li>
-            <li>
-              <a href="#"><i class="bi bi-instagram"></i>
+            <li class="m-5">
+              <a href="#"><i class="bi bi-instagram d-flex justify-content-center" id="Instagram"></i>
                 Instagram</a>
             </li>
-            <li>
-              <a href="#"><i class="bi bi-youtube"></i> Youtube</a>
+            <li class="m-5">
+              <a href="#"><i class="bi bi-youtube d-flex justify-content-center" id="Youtube"></i> Youtube</a>
+            </li>
+            <li class="m-5">
+              <a href="/views/page-error.html"><i class="bi bi-twitter d-flex justify-content-center" id="Twitter"></i>Twitter</a>
             </li>
           </ul>
         </div>
+        <p class="text-center">Todos los derechos reservados</p>
       </div>
     </div>
   </footer>
-
+</body>
 </html>
