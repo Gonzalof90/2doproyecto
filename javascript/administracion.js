@@ -8,8 +8,8 @@ const $nameMovie = document.querySelector("#nameMovie");
 const $genreMovie = document.querySelector("#genreMovie");
 const $descriptionMovie = document.querySelector("#descriptionMovie");
 const $availableMovieCheck = document.querySelector("#availableMovieCheck");
-const $type1 = document.querySelector("#type1");
-const $type2 = document.querySelector("#type2");
+const $typeMovie = document.querySelector("#typeMovie");
+const $typeSerie = document.querySelector("#typeSerie");
 const $releaseYear = document.querySelector("#releaseYear");
 const $urlImageBigSize = document.querySelector("#urlImageBigSize");
 const $urlImageSmallSize = document.querySelector("#urlImageSmallSize");
@@ -56,26 +56,25 @@ const getMoviesFilter = (arr = []) => {
   return { outstanding, noOutstanding };
 };
 
-$modalAddMovie.addEventListener("click", function () {
-  $btnSubmitCreate.innerHTML = "Agregar Contenido";
-  $btnSubmitCreate.style.backgroundColor = "#0275d8";
-});
+const changeAccordingFormAction = (element, textContent, bgColor) => {
+  element.addEventListener("click", function () {
+    $btnSubmitCreate.innerHTML = textContent;
+    $btnSubmitCreate.style.backgroundColor = bgColor;
 
-$type1.addEventListener("change", function () {
-  if (isCreate) {
-    if ($type1.checked) {
-      $btnSubmitCreate.innerHTML = "Agregar Película";
-    }
-  }
-});
+    changeMsgAccordingType($typeMovie, "Agregar Película", isCreate);
+    changeMsgAccordingType($typeSerie, "Agregar Serie", isCreate);
+  });
+};
 
-$type2.addEventListener("change", function () {
-  if (isCreate) {
-    if ($type2.checked) {
-      $btnSubmitCreate.innerHTML = "Agregar Serie";
-    }
-  }
-});
+changeAccordingFormAction($modalAddMovie, "Agregar Contenido", "#0275d8");
+
+const changeMsgAccordingType = (element, textContent) => {
+  element.addEventListener("change", function (e) {
+      if (element.checked) {
+        $btnSubmitCreate.innerHTML = textContent;
+      }
+  });
+};
 
 function getType() {
   let radioElements = document.getElementsByName("type");
@@ -155,7 +154,7 @@ const paintMovies = (arr, container) => {
       </button>
       <button onclick="editMovie(${
         movie.code
-      })" class="btn btn-light btnTable"    data-bs-toggle="modal"
+      })" class="btn btn-light btnTable" data-bs-toggle="modal"
       data-bs-target="#staticBackdrop">
       <img src="../assets/icons/editar.png" alt="icono_de_editar" style="width:2vw">
       </button>
@@ -174,9 +173,25 @@ const paintMovies = (arr, container) => {
   });
 };
 
-const { outstanding, noOutstanding } = getMoviesFilter(movies);
-paintMovies(noOutstanding, $containerMovie);
+const showTableOutstanding = (outstanding) => {
+  if (outstanding.length) {
+    $sectionTable2.classList.add("d-block");
+    $sectionTable2.classList.remove("d-none");
+  } else {
+    $sectionTable2.classList.remove("d-block");
+    $sectionTable2.classList.add("d-none");
+  }
+};
 
+const { outstanding, noOutstanding } = getMoviesFilter(movies);
+
+paintMovies(noOutstanding, $containerMovie);
+paintMovies(outstanding, $containerMovieOutstanding);
+showTableOutstanding(outstanding);
+
+paintMovies(outstanding, $containerMovieOutstanding);
+console.log(outstanding)
+console.log(noOutstanding)
 function removeMovie(id) {
   movies = movies.filter((movie) => movie.code !== parseInt(id));
   saveMovies(movies, "movies");
@@ -185,16 +200,21 @@ function removeMovie(id) {
   paintMovies(outstanding, $containerMovieOutstanding);
 }
 
+const capitalize = (text = "") =>
+  text[0].toUpperCase() + text.slice(1).toLowerCase();
+
 function editMovie(id) {
   isCreate = false;
   const movieFound = movies.find((movie) => movie.code === parseInt(id));
-  $btnSubmitCreate.innerHTML = "Editar Contenido";
+  $btnSubmitCreate.innerHTML = `Editar ${capitalize(movieFound.type)}`;
   $btnSubmitCreate.style.backgroundColor = "green";
+  changeMsgAccordingType($typeMovie, "Editar Película");
+  changeMsgAccordingType($typeSerie, "Editar Serie");
 
   if (movieFound.type === "movie") {
-    $type1.checked = true;
+    $typeMovie.checked = true;
   } else {
-    $type2.checked = true;
+    $typeSerie.checked = true;
   }
 
   $codeMovie.value = movieFound.code;
@@ -214,13 +234,19 @@ function toggleOutstandingMovie(id) {
     if (movie.code === parseInt(id)) {
       return {
         ...movie,
-        outstanding: !movie.outstanding,
+        outstanding:!movie.outstanding,
       };
     }
-    return movie;
+    return {
+      ...movie,
+      outstanding: false,
+    };
   });
+
   const { outstanding, noOutstanding } = getMoviesFilter(movies);
 
+  showTableOutstanding(outstanding);
+console.log(outstanding.length)
   if (outstanding.length) {
     $sectionTable2.classList.add("d-block");
     $sectionTable2.classList.remove("d-none");
@@ -229,7 +255,13 @@ function toggleOutstandingMovie(id) {
     $sectionTable2.classList.add("d-none");
   }
 
+
   saveMovies(movies, "movies");
   paintMovies(noOutstanding, $containerMovie);
   paintMovies(outstanding, $containerMovieOutstanding);
 }
+
+// if(movies!==[]){
+//   const { outstanding, noOutstanding } = getMoviesFilter(movies);
+// // paintMovies(noOutstanding, $containerMovie);
+// paintMovies(outstanding, $containerMovieOutstanding);
