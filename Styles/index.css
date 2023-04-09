@@ -1,10 +1,11 @@
-main li {
+main li img {
     border: #fc7c1c groove 5px;
-    box-shadow:#974101 5px 5px 4px;
+    box-shadow:#974101 3px 2px  1px;
+    border-radius: 5%;
 }
 
-
 main li :hover img{
+border-radius: 5%;
 border:groove;
 }
 
