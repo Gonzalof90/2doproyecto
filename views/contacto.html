@@ -1,65 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="/css/estilos.css" />
-  </head>
-  <body>
-    <div class="contenedor">
-      <h1>Formulari contacto</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700,700i|Open+Sans:400,700&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="contenido-header">
+		<div class="fondo" id="fondo">
+			<h1 class="texto">Rolling movies</h1>
+		</div>
+	</div>
 
-      <div class="contenido">
-        <div class="info">
-          <div class="col">
-            <i class="fa fa-map-marker" aria-hidden="true"></i>
-            <p>Av. 26 de Julio Nro. 8 Ciudad-Pais</p>
-          </div>
-
-          <div class="col">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-            <p>consulta@correo.com</p>
-          </div>
-
-          <div class="col">
-            <i class="fa fa-phone" aria-hidden="true"></i>
-            <p>
-              (01) 6262-222 <br /> (01) 3343-543
-            </p>
-          </div>
-
-
-          <div class="redes-s">
-            <a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-            <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-            <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-          </div>
-
-        </div>
-      </div>
+	<!--<nav class="menu">
+		<a href="#">Nosotros</a>
+		<a href="#">Servicios</a>
+		<a href="#">Mas informacion</a>
+	</nav>-->
     
+    <!-- SECCION CONTACTO -->
+    <section id="contacto" class="contacto">
+        <div class="contenido-seccion">
+            <h2 class="form-title">CONTACTO</h2>
+            <div class="fila">
+                <!-- Formulario -->
+                <div class="col">
+                    <form action="https://formsubmit.co/mariaelvahuerta@gmail.com" method="POST">
+                    <input type="text" name="nombre" placeholder="Tú Nombre">
+                    <input type="text" name="telefono" placeholder="Número telefónico">
+                    <input type="text" name="email" placeholder="Dirección de correo">
+                    <input type="text" name="tema" placeholder="Tema">
+                    <textarea name="mensaje" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                    <div class="form-txt">
+                        <a href="">Politica de privacidad</a>
+                        <a href="">Terminos y condiciones</a>
+                    </div>
+                    <button>
+                        Enviar Mensaje<i class="fa-solid fa-paper-plane"></i>
+                        <span class="overlay"></span>
+                    </button>
 
-      <form action="" method="GET" class="formulario">
-        <input type="text" name="nombre" placeholder="Nombre" id="nombre" />
-        <input
-          type="text"
-          name="correo"
-          placeholder="Correo electronico"
-          id="correo"
-        />
-        <input type="text" name="asunto" placeholder="Asunto" id="asunto" />
-        <textarea name="mensaje" placeholder="Mensaje" id="mensaje"></textarea>
-        <button type="button">Enviar</button>
-      </form>
-    </div>
-  </body>
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5501/index.html">
+                    <input type="hidden" name="_captcha" value="false">
+                </div>
+            </form>
+                <!-- Mapa -->
+                <div class="col">
+                    <img src="/assets/ubicacion.png" alt="">
+                    <div class="info">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Nicaragua 159, San Rafael Mza
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                Llamanos: 2384 - 4343443 
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope"></i>
+                                Email: cw@example.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <a href="#" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        <div class="redes">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-skype"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-solid fa-rss"></i></a>
+        </div>
+    </footer>
+    <script src="/script.js"></script>
+</body>
 </html>
