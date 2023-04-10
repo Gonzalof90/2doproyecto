@@ -31,7 +31,17 @@ $destacado.innerHTML = `<div class="contenedor w-100">
 </a>
 </div>`
 
+<<<<<<< HEAD
+/*<div class="w-100 bg-dark" style="position: relative;">asdasdas<img src="${urlImageBigSize}"class="w-50" alt="Pelicula destacada" draggable="false" style=" position: absolute; z-index: 2;"></div>*/
+
+/* Envio a detalles  */
+
+/*const idMovie = new URLSearchParams(window.location.search).get("idMovie")*/
+const infoLocalStorage = JSON.parse(localStorage.getItem("movies"))
+const movies = infoLocalStorage ? infoLocalStorage : []
+=======
 /*const movies = infoLocalStorage ? infoLocalStorage : []
+>>>>>>> 0db88c7e8b473a8ff5045fcfdbf5d4304c4f7615
 
 const urlImageSmallSize = movies.map(movie => (movie.urlImageSmallSize) )
 
