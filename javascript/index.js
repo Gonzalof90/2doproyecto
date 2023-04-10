@@ -19,7 +19,7 @@ $destacado.innerHTML = `<div class="contenedor w-100">
 /* Envio a detalles  */
 
 /*const idMovie = new URLSearchParams(window.location.search).get("idMovie")*/
-const infoLocalStorage = JSON.parse(localStorage.getItem("peliculas"))
+const infoLocalStorage = JSON.parse(localStorage.getItem("movies"))
 const movies = infoLocalStorage ? infoLocalStorage : []
 
 const urlImageSmallSize = movies.map(movie => (movie.urlImageSmallSize) )
