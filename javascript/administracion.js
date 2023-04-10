@@ -70,9 +70,9 @@ changeAccordingFormAction($modalAddMovie, "Agregar Contenido", "#0275d8");
 
 const changeMsgAccordingType = (element, textContent) => {
   element.addEventListener("change", function (e) {
-      if (element.checked) {
-        $btnSubmitCreate.innerHTML = textContent;
-      }
+    if (element.checked) {
+      $btnSubmitCreate.innerHTML = textContent;
+    }
   });
 };
 
@@ -190,8 +190,6 @@ paintMovies(outstanding, $containerMovieOutstanding);
 showTableOutstanding(outstanding);
 
 paintMovies(outstanding, $containerMovieOutstanding);
-console.log(outstanding)
-console.log(noOutstanding)
 function removeMovie(id) {
   movies = movies.filter((movie) => movie.code !== parseInt(id));
   saveMovies(movies, "movies");
@@ -234,7 +232,7 @@ function toggleOutstandingMovie(id) {
     if (movie.code === parseInt(id)) {
       return {
         ...movie,
-        outstanding:!movie.outstanding,
+        outstanding: !movie.outstanding,
       };
     }
     return {
@@ -246,7 +244,7 @@ function toggleOutstandingMovie(id) {
   const { outstanding, noOutstanding } = getMoviesFilter(movies);
 
   showTableOutstanding(outstanding);
-console.log(outstanding.length)
+  console.log(outstanding.length);
   if (outstanding.length) {
     $sectionTable2.classList.add("d-block");
     $sectionTable2.classList.remove("d-none");
@@ -255,10 +253,19 @@ console.log(outstanding.length)
     $sectionTable2.classList.add("d-none");
   }
 
-
   saveMovies(movies, "movies");
   paintMovies(noOutstanding, $containerMovie);
   paintMovies(outstanding, $containerMovieOutstanding);
 }
 
-// asd
+// amdmin en local storage
+const userLogged = [{user: "admin@admin.com", password: "123456"},{user: "user@user.com", password: "654321"}] 
+const userToJSON = JSON.stringify(userLogged);
+localStorage.setItem( "user",userToJSON);
+
+// const userInLocalStorage = localStorage.getItem("user");
+// const userConvertedJSON = JSON.parse(userInLocalStorage);
+// const [{user, password}] = userConvertedJSON
+// console.log(user)
+// console.log(password)
+
