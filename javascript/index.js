@@ -40,7 +40,7 @@ let $contenedorSlider01 = document.querySelector("#contenedorSlider01")
 function pintarslider(array){
     $contenedorSlider01.innerHTML = ""
     array.forEach((pelicula)=>{const estructuraTarjeta =  `<li>
-    <a href="http://">
+    <a href="film.html?idMovie=${pelicula.code}">
     <img onclick="enviarInfoFilm()" src="${pelicula.urlImageSmallSize}"
         width="100%" alt="..." draggable="false">
     </a>
