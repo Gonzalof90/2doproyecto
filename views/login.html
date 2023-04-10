@@ -13,21 +13,21 @@
   <script src="../javascript/login.js" defer></script>
 </head>
 <body>
-  <main> 
+  <main>
     <div class="login my-3 ">
       <div class="avatar">
         <img classs="avatar" src="/assets/avatar/47774.png">
       </div>
       <h2>Login</h2>
       <h3>Bienvenido de nuevo <!--nombre de usuario--> </h3>
-      <form class="login-form">
+      <form class="login-form" id="loginForm">
         <div class="textbox">
-          <input type="email" placeholder="Usuario" required="">
+          <input type="email" placeholder="Usuario" required id="emailLogin">
         </div>
         <div class="textbox">
-          <input type="password" placeholder="contraseña" required="">
+          <input type="password" placeholder="contraseña" required id="passwordLogin">
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" id="">Login</button>
         <a href="" class="my-2 mx-2 text-center" required="false" data-bs-toggle="modal" data-bs-target="#exampleModal">Recuperar contraseña</a>
         <a href="" claass="my-2 mx-2 text-center" required="false" data-bs-toggle="modal" data-bs-target="#exampleModal2">Registrate aqui! </a>
       </form>
@@ -42,7 +42,7 @@
           <div class="modal-body">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Ingresa tu correo electronico para recuperar tu contraseña.</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required=""> <br>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required> <br>
               <p>Te llegará proximamente un correo con tu nueva contraseña.</p>
             </div>
           </div>
@@ -63,10 +63,10 @@
           </div>
           <div class="modal-body">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label" >Ingrese su correo electronico</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" required=""> <br>
+              <label for="exampleInputEmail2" class="form-label" >Ingrese su correo electronico</label>
+              <input type="email" class="form-control" id="exampleInputEmail2" required> <br>
               <label for="exampleInputPassword" class="form-label">Ingrese su password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" required="">
+              <input type="password" class="form-control" id="exampleInputPassword1" required>
             </div>
           </div>
           <div class="container  my-5" id="registro"> 

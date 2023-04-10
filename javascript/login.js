@@ -1,8 +1,8 @@
 const $enviarMail = document.querySelector ("#enviarMail")
 const $registrarse = document.querySelector ("#registrarse")
-const $form = document.querySelector('form');
-
-
+const $loginForm = document.querySelector("#loginForm")
+const $emailLogin = document.querySelector ("#emailLogin")
+const $passwordLogin = document.querySelector ("#passwordLogin")
 
 
 $enviarMail.addEventListener ("click" ,()  => {
@@ -20,7 +20,7 @@ $registrarse.addEventListener ("click", () => {
 
 
 
-input.addEventListener('change', (e) => {
+/*input.addEventListener('change', (e) => {
   const userFound =  users.find(user =>user.email === e.target.value)
   if(userFound){
       img.src = userFound.avatar
@@ -28,4 +28,18 @@ input.addEventListener('change', (e) => {
         img.src = "https://www.image.com/imgDefaul.ong";
   })
   }
+  }) */
+  const userLogged = [{user: "admin@admin.com", password: "123456"},{user: "user@user.com", password: "654321"}] 
+  const userToJSON = JSON.stringify(userLogged);
+  localStorage.setItem( "user",userToJSON);
+  const userInLocalStorage = localStorage.getItem("user");
+  const userConvertedJSON = JSON.parse(userInLocalStorage)
+  console.log(userConvertedJSON)
+  $loginForm.addEventListener("submit", function (e){
+    e.preventDefault()
+    console.log(userConvertedJSON)
+    const login = userConvertedJSON.filter((users) =>$emailLogin.value ===users.user)
+    if (login.length) {
+      window.location.replace("http://127.0.0.1:5502/views/administracion.html")
+    }
   })
