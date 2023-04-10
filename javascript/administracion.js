@@ -61,8 +61,8 @@ const changeAccordingFormAction = (element, textContent, bgColor) => {
     $btnSubmitCreate.innerHTML = textContent;
     $btnSubmitCreate.style.backgroundColor = bgColor;
 
-    changeMsgAccordingType($typeMovie, "Agregar Película", isCreate);
-    changeMsgAccordingType($typeSerie, "Agregar Serie", isCreate);
+    // changeMsgAccordingType($typeMovie, "Agregar Película", isCreate);
+    // changeMsgAccordingType($typeSerie, "Agregar Serie", isCreate);
   });
 };
 
@@ -138,7 +138,7 @@ const saveMovies = (arrMovies, key) => {
 const paintMovies = (arr, container) => {
   container.innerHTML = "";
   arr.forEach((movie) => {
-    const structureMovie = `<tr><th scope="row" class="text-center">${
+    const structureMovie = `<tr><th scope="row" class="text-center ">${
       movie.code
     }</th>
     <td class="text-center">${movie.type}</td>
@@ -208,14 +208,14 @@ function editMovie(id) {
   const movieFound = movies.find((movie) => movie.code === parseInt(id));
   $btnSubmitCreate.innerHTML = `Editar ${capitalize(movieFound.type)}`;
   $btnSubmitCreate.style.backgroundColor = "green";
-  changeMsgAccordingType($typeMovie, "Editar Película");
-  changeMsgAccordingType($typeSerie, "Editar Serie");
+  // changeMsgAccordingType($typeMovie, "Editar Película");
+  // changeMsgAccordingType($typeSerie, "Editar Serie");
 
-  if (movieFound.type === "movie") {
-    $typeMovie.checked = true;
-  } else {
-    $typeSerie.checked = true;
-  }
+  // if (movieFound.type === "movie") {
+  //   $typeMovie.checked = true;
+  // } else {
+  //   $typeSerie.checked = true;
+  // }
 
   $codeMovie.value = movieFound.code;
   $nameMovie.value = movieFound.name;
@@ -261,7 +261,3 @@ console.log(outstanding.length)
   paintMovies(outstanding, $containerMovieOutstanding);
 }
 
-// if(movies!==[]){
-//   const { outstanding, noOutstanding } = getMoviesFilter(movies);
-// // paintMovies(noOutstanding, $containerMovie);
-// paintMovies(outstanding, $containerMovieOutstanding);
