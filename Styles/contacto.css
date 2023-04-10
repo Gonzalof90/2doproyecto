@@ -1,81 +1,241 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
+h2 {
+    color: #fff !important;
+    text-shadow: 0 0 5px #fc7c1c,
+    0 0 25px #fc7c1c,
+    0 0 50px #fc7c1c,
+    0 0 100px #fc7c1c;
+} 
+
+
+/* ------------------------- */
+/* Header */
+/* ------------------------- */
+
+
+header {
+    background-color: black;
+    box-shadow: 1px 5px 10px #fc7c1c
+}
+header a {
+    -webkit-text-stroke: 1px black;
+    color: #fdb37c !important;;
+    letter-spacing: 5px;
+    cursor:pointer;
+    text-transform:uppercase;
+    transition: 1s;
+
+}
+header a:hover {
+    color: #fff !important;
+    text-shadow: 0 0 5px #fc7c1c,
+    0 0 25px #fc7c1c,
+    0 0 50px #fc7c1c,
+    0 0 100px #fc7c1c;
+
 }
 
-body {
-    background: #f2f2f2;
-    font-family: "open Sans", sans-serif;
-    font-size: 16px;
+
+
+.contenido-header {
+	width: 100%;
+	height: 100vh;
+	background-image: url(../assets/imgcontacto/Contacto.png);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
-.contenedor {
-    width: 90%;
-    max-width: 1000px;
-    background: #fff;
-    padding: 40px;
-    margin: 20px auto;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+.contenido-header .fondo {
+	width: 0%;
+	height: 100%;
+	max-width: 100%;
+	background-image: url(../assets/imgcontacto/contact_bg.png);
 }
 
-.contebedor h1 {
-    font-size: 30px;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 25px;
-    color: #15cf8a;
-}
-
-.contenedor {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
-}
-
-.contenedor .info,
-.contenedor .formulario {
-    width: 50%;
-}
-
-.info {
-    padding-left: 10px;
-}
-
-.info .col {
-    width: 100%;
-    display: flex;
-    margin-bottom: 15px;
-    font-size: 16px;
-    align-items: center;
-    flex-wrap: nowrap;
-}
-
-.info .col .icono {
-    color: #15cf8a;
-    margin-right: 10px;
-}
-
-.info .col p {
-    color: #999;
-}
-
-.info .redes-s {
-    width: 100%;
-    overflow: hidden;
-    padding-left: 25px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.info .redes-s a {
-    display: flex;
-    width: 40px;
-    height: 40px;
-    background: #15cf8a;
+.contacto{
+    background-image: url(../assets/imgcontacto/contact_bg.png);
+    background-color: #1e2326;
     color: #fff;
+    padding: 50px 0;
 }
+.contacto .contenido-seccion{
+    max-width: 1100px;
+    margin: auto;
+}
+.contacto h2{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+}
+.contacto .fila{
+    display: flex;
+}
+.contacto .col{
+    width: 50%;
+    padding: 10px;
+    position: relative;
+}
+.contacto .col input, .contacto .col textarea{
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    margin-bottom: 20px;
+    background-color: #252A2E;
+    color: #fff;
+    font-size: 18px;
+}
+
+.form-txt{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.form-txt a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+.contacto button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+.contacto button .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #fc7c1c;
+    z-index: -1;
+    transition: 1s;
+}
+.contacto button:hover .overlay{
+    width: 100%;
+}
+.contacto .col img{
+    width: 100%;
+}
+.contacto .col .info{
+    position: absolute;
+    top: 40%;
+    background-color: #252A2E;
+    padding: 20px;
+    max-width:  350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.contacto .col .info ul{
+    list-style: none;
+}
+.contacto .col .info ul li{
+    margin-bottom: 20px;
+}
+.contacto .col .info ul li i{
+    color: #1CB698;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+
+footer {
+    background-color: black;
+    color: #fff !important;
+    text-shadow: 0 0 5px #fc7c1c,
+    0 0 25px #fc7c1c,
+    0 0 50px #fc7c1c,
+    0 0 100px #fc7c1c;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-decoration: none;
+    -webkit-text-stroke: 1px black;
+    box-shadow: 1px -5px 10px #fc7c1c ;
+}
+
+footer ul {
+    list-style: none;
+}
+footer i {
+    -webkit-text-stroke: 1px black;
+    color:#6d3409  !important; 
+    
+    letter-spacing: 5px;
+    cursor:pointer;
+    text-transform:uppercase;
+    transition: 1s;
+}
+
+footer a {
+    text-decoration: none;
+    -webkit-text-stroke: 1px black;
+    color: #fdb37c !important;
+    letter-spacing: 5px;
+    cursor:pointer;
+    text-transform:uppercase;
+    transition: 1s;
+    font-size: 1.5rem;
+}
+
+footer a:hover {
+    font-size: 1.7rem;
+    color: #fff !important;
+    text-shadow: 0 0 5px #fff,
+    0 0 25px #fff,
+    0 0 50px #fff,
+    0 0 100px #fff;
+}
+#Facebook {
+    color: #fff !important;
+    text-shadow: 0 0 5px #3b5998,
+    0 0 25px #3b5998,
+    0 0 50px #3b5998,
+    0 0 100px #3b5998;
+}
+#Instagram {
+    color: #fff !important;
+    text-shadow: 0 0 5px #E1306C,
+    0 0 25px #E1306C,
+    0 0 50px #E1306C,
+    0 0 100px #E1306C;
+}
+#Youtube {
+    color: #fff !important;
+    text-shadow: 0 0 5px #c4302b,
+    0 0 25px #c4302b,
+    0 0 50px #c4302b,
+    0 0 100px #c4302b;
+}
+#Github {
+    color: #fff !important;
+    text-shadow: 0 0 5px #171515,
+    0 0 25px #171515,
+    0 0 50px #171515,
+    0 0 100px #171515;
+}
+.navbar-toggler {
+    background-color: #fc7c1c;
+}
+#Twitter {
+    color: #fff !important;
+      text-shadow: 0 0 5px #00acee,
+      0 0 25px #00acee,
+      0 0 50px #00acee,
+      0 0 100px #00acee;
+  }
