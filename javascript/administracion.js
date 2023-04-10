@@ -269,3 +269,7 @@ localStorage.setItem( "user",userToJSON);
 // console.log(user)
 // console.log(password)
 
+console.log(window.location.href)
+const url = new URL(window.location.href)
+const result = url.port
+console.log(result)
