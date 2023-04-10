@@ -39,7 +39,9 @@ $registrarse.addEventListener ("click", () => {
     e.preventDefault()
     console.log(userConvertedJSON)
     const login = userConvertedJSON.filter((users) =>$emailLogin.value ===users.user)
+    const url = new URL(window.location.href)
+    const result = url.port
     if (login.length) {
-      window.location.replace("http://127.0.0.1:5502/views/administracion.html")
+    window.location.replace(`"http://127.0.0.1:${result}/views/administracion.html"`)
     }
   })
