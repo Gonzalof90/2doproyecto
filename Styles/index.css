@@ -38,8 +38,7 @@ body , main {
 }
 
 @media (width >= 450px) {
-main 
-width:100%;
+
 }
 
 
@@ -50,10 +49,4 @@ width:100%;
  }
  }
  
-/*
- @media (min-width: 386px and ) { 
-    main  { 
-    
-     }
-  }*/
 
