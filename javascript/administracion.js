@@ -130,14 +130,43 @@ $createForm.addEventListener("submit", function (event) {
   saveMovies(movies, "movies");
   paintMovies(noOutstanding, $containerMovie);
   paintMovies(outstanding, $containerMovieOutstanding);
+  
+  if ($createForm.checkValidity()) {
+    //cerrar el modal
+    closeModal();
+  }
   $createForm.reset();
   isCreate = true;
+  
 });
 
 const saveMovies = (arrMovies, key) => {
   const moviesToJSON = JSON.stringify(arrMovies);
   localStorage.setItem(key, moviesToJSON);
 };
+
+// const $form = document.querySelector(".formulario")
+
+// $form.addEventListener('submit', function(event) {
+//   //detener el comportamiento por defecto de enviar el formulario
+//   event.preventDefault();
+//   //verificar si los campos requeridos están completos
+//   if ($form.checkValidity()) {
+//     console.log($form.checkValidity())
+//     //cerrar el modal
+//     closeModal();
+//   }
+// });
+
+//función que cierra el modal
+function closeModal() {
+  const modal = document.querySelector('.modal');
+  modal.style.display = 'none';
+  modalBg.style.display = 'none';
+}
+// En este ejemplo, el evento "submit" del formulario se escucha y se detiene su comportamiento por defecto de enviar el formulario. Luego se verifica si los campos requeridos están completos utilizando el método "checkValidity()" del formulario. Si todos los campos requeridos están completos, se llama a la función "closeModal()" para cerrar el modal. Si no, se permite al usuario continuar completando el formulario.
+
+
 
 const paintMovies = (arr, container) => {
   container.innerHTML = "";
