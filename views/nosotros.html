@@ -64,21 +64,21 @@
       </nav>
     </header>
     <main class="rounded" id="main">
-      <article>
+      <article id="nos-text">
         <div class="d-flex flex-column align-items-center text-light">
-          <h2 class="mb-5 text-black">Quienes somos</h2>
-          <p class="mx-5 text-black">
+          <h2 class="mb-5">Quienes somos</h2>
+          <p class="mx-5">
             Somos un grupo de apasionados por el cine que buscan hacer llegar
             peliculas, series y documentales, entre otras cosas, a todo el mundo
           </p>
-          <p class="mx-5 text-black">
+          <p class="mx-5">
             Aparte de esto te ofrecemos las últimas noticias acerca de estrenos
             y acontecimientos que giran en torno a este mundo.
           </p>
         </div>
       </article>
       <article>
-        <div class="d-flex justify-content-center my-5 text-black">
+        <div class="d-flex justify-content-center my-5">
           <h2>Nuestro equipo</h2>
         </div>
         <div class="d-flex justify-content-around container-fluid gap-2" id="contenedor">
@@ -205,28 +205,38 @@
       </article>
     </main>
     <footer>
-      <div class="container d-flex justify-content-center">
-        <div class="row d-flex justify-content-center">
-          <div class="col-sm-12 col-md-6 col-lg-3">
-            <p class="text-center">Redes Sociales</p>
-            <ul class=" d-flex flex-direction-row justify-content-around align-items-center">
-              <li class="m-5">
-                <a href="/views/page-error.html"><i class="bi bi-facebook d-flex justify-content-center align-items-center gap-2" id="Facebook">Facebook</i></a>
-              </li>
-              <li class="m-5">
-                <a href="/views/page-error.html"><i class="bi bi-instagram d-flex justify-content-center align-items-center gap-2" id="Instagram">Instagram</i>
-                </a>
-              </li>
-              <li class="m-5">
-                <a href="/views/page-error.html"><i class="bi bi-youtube d-flex justify-content-center align-items-center gap-2" id="Youtube">Youtube</i> </a>
-              </li>
-              <li class="m-5">
-                <a href="/views/page-error.html"><i class="bi bi-twitter d-flex justify-content-center align-items-center gap-2" id="Twitter">Twitter</i></a>
-              </li>
-            </ul>
+      <div class="container-fluid">
+          <div
+              class="row w-100 d-flex flex-column align-items-center"
+          >
+              <p class="text-center">Redes Sociales</p>
+              <div class="col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center align-items-center">
+                  
+                  <ul class="d-flex gap-5">
+                      <li id="Facebook">
+                          <a href="/views/page-error.html" target="_blank"
+                              ><i class="bi bi-facebook"></i>
+                              <span>Facebook</span>
+                            </a>
+                      </li>
+                      <li id="Instagram">
+                          <a href="/views/page-error.html" target="_blank"
+                              ><i class="bi bi-instagram"></i>
+                             <span> Instagram</span>
+                            </a>
+                      </li>
+                      <li id="Youtube">
+                          <a href="/views/page-error.html" target="_blank"
+                              ><i class="bi bi-youtube"></i> 
+                              <span> Youtube</span> 
+                              </a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6 d-flex justify-content-center align-items-center">
+                <p>Todos los derechos reservados</p>
+            </div>
           </div>
-          <p class="text-center">Todos los derechos reservados</p>
-        </div>
       </div>
     </footer>
   </body>

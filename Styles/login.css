@@ -1,4 +1,4 @@
-* { box-sizing: border-box;}
+
 body {
     margin:0;
     padding:0 24px;
@@ -72,7 +72,7 @@ header {
 }
 
 .login > h3 {
-    color:#fff;
+    color:#f9f9f9;
     margin: 0 0 30px;
     font-weight:500;
     font-size:16px;
@@ -162,7 +162,7 @@ header {
     0 0 100px #fc7c1c;
 }
 .modal-body label, p {
-    color:#fc7c1c;
+    color:#fff;
     text-shadow:0 0 5px #fc7c1c,
     0 0 25px #fc7c1c,
     0 0 50px #fc7c1c,
@@ -172,18 +172,16 @@ header {
  
 footer {
     background-color: black;
+    color: #fff !important;
     text-shadow: 0 0 5px #fc7c1c,
     0 0 25px #fc7c1c,
     0 0 50px #fc7c1c,
     0 0 100px #fc7c1c;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 1.2rem;
     text-decoration: none;
     -webkit-text-stroke: 1px black;
-    opacity:0.9;
-}
-footer p {
-    color:#fff;
+    box-shadow: 0px -5px 10px #fc7c1c ;
 }
 
 footer ul {
@@ -191,33 +189,35 @@ footer ul {
 }
 footer i {
     -webkit-text-stroke: 1px black;
-    color: #6d3409 !important;;
+    color:#fff;
     letter-spacing: 5px;
     cursor:pointer;
     text-transform:uppercase;
     transition: 1s;
 }
 
-footer i {
+footer a {
     text-decoration: none;
     -webkit-text-stroke: 1px black;
-    color: #6d3409 !important;
+    color: #fff !important;
     letter-spacing: 5px;
     cursor:pointer;
     text-transform:uppercase;
     transition: 1s;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
-footer a {
-  text-decoration: none;
-}
-footer i:hover {
-    font-size: 1.7rem;
+
+footer a:hover {
+    font-size: 1.1rem;
     color: #fff !important;
     text-shadow: 0 0 5px #fff,
     0 0 25px #fff,
     0 0 50px #fff,
     0 0 100px #fff;
+}
+footer .copy {
+    color: #fff !important;
+    cursor: none;
 }
 #Facebook {
     color: #fff !important;
@@ -240,18 +240,27 @@ footer i:hover {
     0 0 50px #c4302b,
     0 0 100px #c4302b;
 }
-#Github {
-    color: #fff !important;
-    text-shadow: 0 0 5px #171515,
-    0 0 25px #171515,
-    0 0 50px #171515,
-    0 0 100px #171515;
+.navbar-toggler {
+    background-color: #fc7c1c;
 }
 #Twitter {
-  color: #fff !important;
+    color: #fff !important;
     text-shadow: 0 0 5px #00acee,
     0 0 25px #00acee,
     0 0 50px #00acee,
     0 0 100px #00acee;
 }
 
+
+@media screen and (min-width:767px) {
+    .navbar {
+         font-size:1em!important;
+     }
+ }
+
+@media screen and (max-width:768px) {
+   
+    footer span {
+        display:none;
+    }
+}
