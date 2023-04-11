@@ -98,7 +98,7 @@ $createForm.addEventListener("submit", function (event) {
       urlTrailer: $urlTrailer.value,
       durationHours: $durationHours.value,
       releaseYear: $releaseYear.value,
-      outstanding: false, // destacado
+      outstanding: false, 
     };
     movies.push(newMovie);
   } else {
@@ -269,3 +269,9 @@ localStorage.setItem( "user",userToJSON);
 // console.log(user)
 // console.log(password)
 
+// console.log(window.location.href)
+// const url = new URL(window.location.href)
+// const result = url.port
+// console.log(result)
+
+// window.location.replace(`/views/administracion.html`)
