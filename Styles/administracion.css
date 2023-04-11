@@ -10,26 +10,37 @@ body{
 
 table{
     background-color: #fdb37c;
-    table-layout: fixed;
+    table-layout: initial;
 
 }
-td{
-    width: 20px;
-    overflow: hidden;
-   
+
+td {
+    min-width: 35px;
+    height: 30px;
+    background-color: #433;
+    
   }
+
+/* td {
+    width: 10px;
+    overflow:auto;
+    height: 2px;
+   
+  } */
+
+
 
 @media (max-width:426px){
     .contentResp{
         display: none;
     }
     .btnTable{
-        width: 6vw;
-        padding: 2;
+        width: 10vw;
+        padding: 0;
         
     }
-    .optionsMovie{
-        display: flex;
+    /* .optionsMovie{ */
+        /* display: flex; */
         
-    }
+    /* } */
 }
