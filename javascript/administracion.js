@@ -153,6 +153,7 @@ function closeModal() {
   $modalBackdrop.forEach((backdrop) =>{ backdrop.classList.remove("show");
   backdrop.style.display = "none"})
   document.body.style.overflow = "visible"
+  $modalAddMovie.click()
 }
 
 const paintMovies = (arr, container) => {
