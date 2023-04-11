@@ -4,6 +4,12 @@
 	box-sizing: border-box;
 }
 
+
+
+/* ------------------------- */
+/* Header */
+/* ------------------------- */
+
 h2 {
     color: #fff !important;
     text-shadow: 0 0 5px #fc7c1c,
@@ -11,12 +17,6 @@ h2 {
     0 0 50px #fc7c1c,
     0 0 100px #fc7c1c;
 } 
-
-
-/* ------------------------- */
-/* Header */
-/* ------------------------- */
-
 
 header {
     background-color: black;
