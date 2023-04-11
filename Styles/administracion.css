@@ -14,8 +14,8 @@ table{
 
 }
 td{
-    width: 130px;
-    overflow: auto;
+    width: 20px;
+    overflow: hidden;
    
   }
 
@@ -30,6 +30,6 @@ td{
     }
     .optionsMovie{
         display: flex;
-        /* flex-direction: column; */
+        
     }
 }
