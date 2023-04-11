@@ -147,13 +147,18 @@ const saveMovies = (arrMovies, key) => {
 const $modal = document.querySelector("#staticBackdrop");
 
 function closeModal() {
+  const $modalBackdrop = document.querySelectorAll(".modal-backdrop")
+  $modal.classList.remove("show")
   $modal.style.display = "none";
+  $modalBackdrop.forEach((backdrop) =>{ backdrop.classList.remove("show");
+  backdrop.style.display = "none"})
+  document.body.style.overflow = "visible"
 }
 
 const paintMovies = (arr, container) => {
   container.innerHTML = "";
   arr.forEach((movie) => {
-    const structureMovie = `<tr class="gonza"><th scope="row" class="text-center ">${
+    const structureMovie = `<tr><th scope="row" class="text-center ">${
       movie.code
     }</th>
     <td class="text-center">${movie.type}</td>
