@@ -1,8 +1,5 @@
 const generateId = () => Math.floor(Math.random() * 9999999);
-/* **********************************
--------------- MODAL ------------- 
-   ********************************** */
-// Elementos de formulario
+
 const $codeMovie = document.querySelector("#codeMovie");
 const $nameMovie = document.querySelector("#nameMovie");
 const $genreMovie = document.querySelector("#genreMovie");
@@ -19,15 +16,13 @@ const $createForm = document.querySelector("#createForm");
 const $btnSubmitCreate = document.querySelector("#btnSubmitCreate");
 const $modalAddMovie = document.querySelector("#modalAddMovie");
 
-/*  **********************************
-  ----------------- TABLAS --------------- 
-  **********************************  */
+
 const $optionsMovie = document.querySelector(".optionsMovie");
 
-// Administrar Contenido
+
 const $containerMovie = document.querySelector("#containerMovies");
 
-// Contenido Destacado
+
 const $containerMovieOutstanding = document.querySelector(
   "#containerMovieOutstanding"
 );
@@ -38,11 +33,11 @@ const $tableOutstanding = document.querySelector("#tableOutstanding");
 
 let moviesTesting = false;
 
-// STORAGE
+
 const moviesInLocalStorage = localStorage.getItem("movies");
 const moviesConvertedJSON = JSON.parse(moviesInLocalStorage);
 
-// GLOBALES
+
 let isCreate = true;
 let movies = moviesConvertedJSON ? moviesConvertedJSON : [];
 
@@ -130,7 +125,7 @@ $createForm.addEventListener("submit", function (event) {
   paintMovies(outstanding, $containerMovieOutstanding);
 
   if ($createForm.checkValidity()) {
-    //cerrar el modal
+
     closeModal();
   }
 
@@ -143,7 +138,7 @@ const saveMovies = (arrMovies, key) => {
   localStorage.setItem(key, moviesToJSON);
 };
 
-// function close modal
+
 const $modal = document.querySelector("#staticBackdrop");
 
 function closeModal() {
@@ -279,7 +274,7 @@ function toggleOutstandingMovie(id) {
   paintMovies(outstanding, $containerMovieOutstanding);
 }
 
-// amdmin en local storage
+
 const userLogged = [
   { user: "admin@admin.com", password: "123456" },
   { user: "user@user.com", password: "654321" },
