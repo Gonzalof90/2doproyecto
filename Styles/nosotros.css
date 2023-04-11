@@ -125,7 +125,7 @@ header a:hover {
       transition: 1s;
   }
   
-  footer a {
+  footer i {
       text-decoration: none;
       -webkit-text-stroke: 1px black;
       color: #6d3409 !important;
@@ -135,8 +135,10 @@ header a:hover {
       transition: 1s;
       font-size: 1.5rem;
   }
-  
-  footer a:hover {
+  footer a {
+    text-decoration: none;
+  }
+  footer i:hover {
       font-size: 1.7rem;
       color: #fff !important;
       text-shadow: 0 0 5px #fff,

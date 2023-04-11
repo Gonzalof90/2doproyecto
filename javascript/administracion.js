@@ -61,8 +61,8 @@ const changeAccordingFormAction = (element, textContent, bgColor) => {
     $btnSubmitCreate.innerHTML = textContent;
     $btnSubmitCreate.style.backgroundColor = bgColor;
 
-    changeMsgAccordingType($typeMovie, "Agregar Película", isCreate);
-    changeMsgAccordingType($typeSerie, "Agregar Serie", isCreate);
+    // changeMsgAccordingType($typeMovie, "Agregar Película", isCreate);
+    // changeMsgAccordingType($typeSerie, "Agregar Serie", isCreate);
   });
 };
 
@@ -70,9 +70,9 @@ changeAccordingFormAction($modalAddMovie, "Agregar Contenido", "#0275d8");
 
 const changeMsgAccordingType = (element, textContent) => {
   element.addEventListener("change", function (e) {
-      if (element.checked) {
-        $btnSubmitCreate.innerHTML = textContent;
-      }
+    if (element.checked) {
+      $btnSubmitCreate.innerHTML = textContent;
+    }
   });
 };
 
@@ -98,7 +98,7 @@ $createForm.addEventListener("submit", function (event) {
       urlTrailer: $urlTrailer.value,
       durationHours: $durationHours.value,
       releaseYear: $releaseYear.value,
-      outstanding: false, // destacado
+      outstanding: false, 
     };
     movies.push(newMovie);
   } else {
@@ -138,7 +138,7 @@ const saveMovies = (arrMovies, key) => {
 const paintMovies = (arr, container) => {
   container.innerHTML = "";
   arr.forEach((movie) => {
-    const structureMovie = `<tr><th scope="row" class="text-center">${
+    const structureMovie = `<tr><th scope="row" class="text-center ">${
       movie.code
     }</th>
     <td class="text-center">${movie.type}</td>
@@ -190,8 +190,6 @@ paintMovies(outstanding, $containerMovieOutstanding);
 showTableOutstanding(outstanding);
 
 paintMovies(outstanding, $containerMovieOutstanding);
-console.log(outstanding)
-console.log(noOutstanding)
 function removeMovie(id) {
   movies = movies.filter((movie) => movie.code !== parseInt(id));
   saveMovies(movies, "movies");
@@ -208,14 +206,14 @@ function editMovie(id) {
   const movieFound = movies.find((movie) => movie.code === parseInt(id));
   $btnSubmitCreate.innerHTML = `Editar ${capitalize(movieFound.type)}`;
   $btnSubmitCreate.style.backgroundColor = "green";
-  changeMsgAccordingType($typeMovie, "Editar Película");
-  changeMsgAccordingType($typeSerie, "Editar Serie");
+  // changeMsgAccordingType($typeMovie, "Editar Película");
+  // changeMsgAccordingType($typeSerie, "Editar Serie");
 
-  if (movieFound.type === "movie") {
-    $typeMovie.checked = true;
-  } else {
-    $typeSerie.checked = true;
-  }
+  // if (movieFound.type === "movie") {
+  //   $typeMovie.checked = true;
+  // } else {
+  //   $typeSerie.checked = true;
+  // }
 
   $codeMovie.value = movieFound.code;
   $nameMovie.value = movieFound.name;
@@ -234,7 +232,7 @@ function toggleOutstandingMovie(id) {
     if (movie.code === parseInt(id)) {
       return {
         ...movie,
-        outstanding:!movie.outstanding,
+        outstanding: !movie.outstanding,
       };
     }
     return {
@@ -246,7 +244,7 @@ function toggleOutstandingMovie(id) {
   const { outstanding, noOutstanding } = getMoviesFilter(movies);
 
   showTableOutstanding(outstanding);
-console.log(outstanding.length)
+  console.log(outstanding.length);
   if (outstanding.length) {
     $sectionTable2.classList.add("d-block");
     $sectionTable2.classList.remove("d-none");
@@ -255,13 +253,25 @@ console.log(outstanding.length)
     $sectionTable2.classList.add("d-none");
   }
 
-
   saveMovies(movies, "movies");
   paintMovies(noOutstanding, $containerMovie);
   paintMovies(outstanding, $containerMovieOutstanding);
 }
 
-// if(movies!==[]){
-//   const { outstanding, noOutstanding } = getMoviesFilter(movies);
-// // paintMovies(noOutstanding, $containerMovie);
-// paintMovies(outstanding, $containerMovieOutstanding);
+// amdmin en local storage
+const userLogged = [{user: "admin@admin.com", password: "123456"},{user: "user@user.com", password: "654321"}] 
+const userToJSON = JSON.stringify(userLogged);
+localStorage.setItem( "user",userToJSON);
+
+// const userInLocalStorage = localStorage.getItem("user");
+// const userConvertedJSON = JSON.parse(userInLocalStorage);
+// const [{user, password}] = userConvertedJSON
+// console.log(user)
+// console.log(password)
+
+// console.log(window.location.href)
+// const url = new URL(window.location.href)
+// const result = url.port
+// console.log(result)
+
+// window.location.replace(`/views/administracion.html`)

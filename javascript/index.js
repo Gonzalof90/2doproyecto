@@ -1,7 +1,7 @@
 /*let destacadaEnLocalStorage = localStorage.getItem("peliDestacada");
 let destacadaConvertidasJS = JSON.parse(destacadaEnLocalStorage);
 let destacada = destacadaConvertidasJS
-let $contenedorSlider01 = document.querySelector("#contenedorSlider01")
+
 */
 const infoLocalStorage = JSON.parse(localStorage.getItem("movies"))
 console.log(infoLocalStorage)
@@ -22,24 +22,27 @@ const getMoviesFilter = (arr = []) => {
   console.log(noOutstanding)
 
 let [pelicula] = outstanding
-let {urlImageBigSize,nombre,genero,descripcion} = pelicula
+let {urlImageBigSize,name,genre,description,code} = pelicula
 let $destacado = document.querySelector("#destacado")
 $destacado.innerHTML = `<div class="contenedor w-100">
-<img class="w-100" src="${urlImageBigSize}"/>
-<div class="centrado text-light bg-dark display-5 w-100">Titulo:${nombre}<br>Genero:${genero}<br>${descripcion}</div>
+<a href="film.html?idMovie=${code}" class="d-flex">
+<img class="w-100 img-fluid" src="${urlImageBigSize}" draggable="false"/>
+<div class="centrado text-light bg-dark w-100 container-fluid justify-content-center">Titulo:${name}<br>Genero:${genre}<br>Descripcion:${description}</div>
+</a>
 </div>`
 
 /*const movies = infoLocalStorage ? infoLocalStorage : []
 
 const urlImageSmallSize = movies.map(movie => (movie.urlImageSmallSize) )
 
-
+*/
+let $contenedorSlider01 = document.querySelector("#contenedorSlider01")
 function pintarslider(array){
     $contenedorSlider01.innerHTML = ""
     array.forEach((pelicula)=>{const estructuraTarjeta =  `<li>
-    <a href="http://">
+    <a href="film.html?idMovie=${pelicula.code}">
     <img onclick="enviarInfoFilm()" src="${pelicula.urlImageSmallSize}"
-        width="100%" alt="...">
+        width="100%" alt="..." draggable="false">
     </a>
     </li>`
     $contenedorSlider01.innerHTML += estructuraTarjeta 
@@ -48,7 +51,5 @@ function pintarslider(array){
 
                              }
 
-                             pintarslider(movies)
+                             pintarslider(noOutstanding)
                             console.log(pelicula.urlImageSmallSize)
-
-                            */

@@ -10,9 +10,14 @@ body{
 
 table{
     background-color: #fdb37c;
+    table-layout: fixed;
+
 }
-
-
+td{
+    width: 20px;
+    overflow: hidden;
+   
+  }
 
 @media (max-width:426px){
     .contentResp{
@@ -21,6 +26,10 @@ table{
     .btnTable{
         width: 6vw;
         padding: 2;
+        
+    }
+    .optionsMovie{
+        display: flex;
         
     }
 }

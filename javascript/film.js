@@ -9,18 +9,18 @@ let $contenedorTrailer =document.getElementById("contenedorTrailer")
 let $sinopsisPelicula = document.getElementById("sinopsisPelicula")
 
 const idMovie = new URLSearchParams(window.location.search).get("idMovie")
-const infoLocalStorage = JSON.parse(localStorage.getItem("peliculas"))
+const infoLocalStorage = JSON.parse(localStorage.getItem("movies"))
 const movies = infoLocalStorage ? infoLocalStorage : []
 
-const movieFound = movies.find(movie => movie.codigo === parseInt(idMovie))
+const movieFound = movies.find(movie => movie.code === parseInt(idMovie))
 
-console.log(movieFound)
+console.log(movies)
 
-$nombrePelicula.textContent = movieFound.nombre
-$sinopsisPelicula.textContent = movieFound.descripcion 
-$añoPelicula.textContent = movieFound.anioEstreno
-$generoPelicula.textContent = movieFound.genero
-$duracionPelicula.textContent = movieFound.duracionHoras
+$nombrePelicula.textContent = movieFound.name
+$sinopsisPelicula.textContent = movieFound.description 
+$añoPelicula.textContent = movieFound.releaseYear
+$generoPelicula.textContent = movieFound.genre
+$duracionPelicula.textContent = movieFound.durationHours
 
 const trailer =  movieFound.urlTrailer.replace("watch?v=","embed/")
 
