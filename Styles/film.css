@@ -1,20 +1,17 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
 }
 
-.bg{
-
-    background-color: #171616
-    ;
-    color: #fc7c1c;
+.bg {
+  background-color: #171616;
+  color: #fc7c1c;
 }
 .btn {
-    text-decoration-color: #fc7c1c;
-    -moz-text-decoration-color: #fc7c1c;
+  text-decoration-color: #fc7c1c;
+  -moz-text-decoration-color: #fc7c1c;
 }
-.img{
-    opacity: 80%;
-    
+.img {
+  opacity: 80%;
 }
