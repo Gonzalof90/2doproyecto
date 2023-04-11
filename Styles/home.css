@@ -110,8 +110,18 @@ footer .copy {
     0 0 100px #00acee;
 }
 
+
+@media screen and (min-width:767px) {
+    .navbar {
+         font-size:1em!important;
+     }
+ }
+
 @media screen and (max-width:768px) {
+   
     footer span {
         display:none;
     }
 }
+
+
