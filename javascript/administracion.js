@@ -36,9 +36,7 @@ const $sectionTable2 = document.querySelector(".section-table-2");
 const $titleOutstanding = document.querySelector("#titleOutstanding");
 const $tableOutstanding = document.querySelector("#tableOutstanding");
 
-let moviesTesting = false
-
-
+let moviesTesting = false;
 
 // STORAGE
 const moviesInLocalStorage = localStorage.getItem("movies");
@@ -130,14 +128,14 @@ $createForm.addEventListener("submit", function (event) {
   saveMovies(movies, "movies");
   paintMovies(noOutstanding, $containerMovie);
   paintMovies(outstanding, $containerMovieOutstanding);
-  
+
   if ($createForm.checkValidity()) {
     //cerrar el modal
     closeModal();
   }
+
   $createForm.reset();
   isCreate = true;
-  
 });
 
 const saveMovies = (arrMovies, key) => {
@@ -145,28 +143,13 @@ const saveMovies = (arrMovies, key) => {
   localStorage.setItem(key, moviesToJSON);
 };
 
-// const $form = document.querySelector(".formulario")
 
-// $form.addEventListener('submit', function(event) {
-//   //detener el comportamiento por defecto de enviar el formulario
-//   event.preventDefault();
-//   //verificar si los campos requeridos están completos
-//   if ($form.checkValidity()) {
-//     console.log($form.checkValidity())
-//     //cerrar el modal
-//     closeModal();
-//   }
-// });
+// function close modal
+const $modal = document.querySelector("#staticBackdrop");
 
-//función que cierra el modal
 function closeModal() {
-  const modal = document.querySelector('.modal');
-  modal.style.display = 'none';
-  modalBg.style.display = 'none';
+  $modal.style.display = "none";
 }
-// En este ejemplo, el evento "submit" del formulario se escucha y se detiene su comportamiento por defecto de enviar el formulario. Luego se verifica si los campos requeridos están completos utilizando el método "checkValidity()" del formulario. Si todos los campos requeridos están completos, se llama a la función "closeModal()" para cerrar el modal. Si no, se permite al usuario continuar completando el formulario.
-
-
 
 const paintMovies = (arr, container) => {
   container.innerHTML = "";
@@ -299,8 +282,6 @@ const userLogged = [
 const userToJSON = JSON.stringify(userLogged);
 localStorage.setItem("user", userToJSON);
 
-
-
 // peliculas para el localstorage demo
 
 const peliculas = [
@@ -319,9 +300,9 @@ const peliculas = [
       "https://w0.peakpx.com/wallpaper/83/580/HD-wallpaper-movie-black-panther-wakanda-forever.jpg",
     urlImageSmallSize:
       "https://www.themoviedb.org/t/p/w220_and_h330_face/u8BMLmwoc7YPHKSWawOOqC1c8lJ.jpg",
-    urlTrailer:
-      "https://www.youtube.com/watch?v=ffTFm4vFLGk"
-  }, {
+    urlTrailer: "https://www.youtube.com/watch?v=ffTFm4vFLGk",
+  },
+  {
     available: true,
     code: 2134187,
     description:
@@ -336,9 +317,9 @@ const peliculas = [
       "https://evdboxeo.com/wp-content/uploads/2021/03/Creed-3.jpg",
     urlImageSmallSize:
       "https://www.themoviedb.org/t/p/w220_and_h330_face/xCxwaQeoIr4FcjlPgHfzog0x4B8.jpg",
-    urlTrailer:
-      "https://www.youtube.com/watch?v=gtlg3P2lrts"
-  }, {
+    urlTrailer: "https://www.youtube.com/watch?v=gtlg3P2lrts",
+  },
+  {
     available: true,
     code: 2166178,
     description:
@@ -353,9 +334,9 @@ const peliculas = [
       "https://super-ficcion.com/wp-content/uploads/2020/05/Shazam-2-Zachary-Levi.jpg",
     urlImageSmallSize:
       "https://www.themoviedb.org/t/p/w220_and_h330_face/bqOqQ2Tawum3eHKNrc94P4EeaZB.jpg",
-    urlTrailer:
-      "https://www.youtube.com/watch?v=gtlg3P2lrts"
-  }, {
+    urlTrailer: "https://www.youtube.com/watch?v=gtlg3P2lrts",
+  },
+  {
     available: true,
     code: 1191161,
     description:
@@ -370,9 +351,9 @@ const peliculas = [
       "https://w0.peakpx.com/wallpaper/83/580/HD-wallpaper-movie-black-panther-wakanda-forever.jpg",
     urlImageSmallSize:
       "https://www.themoviedb.org/t/p/w220_and_h330_face/zNKs1T0VZuJiVuhuL5GSCNkGdxf.jpg",
-    urlTrailer:
-      "https://www.youtube.com/watch?v=gtlg3P2lrts"
-  },{
+    urlTrailer: "https://www.youtube.com/watch?v=gtlg3P2lrts",
+  },
+  {
     available: true,
     code: 1191171,
     description:
@@ -387,9 +368,9 @@ const peliculas = [
       "https://w0.peakpx.com/wallpaper/83/580/HD-wallpaper-movie-black-panther-wakanda-forever.jpg",
     urlImageSmallSize:
       "https://www.themoviedb.org/t/p/w220_and_h330_face/dAwvE6Vd4mhlx2xJU6PqjBAM2y5.jpg",
-    urlTrailer:
-      "https://www.youtube.com/watch?v=gtlg3P2lrts"
-  },{
+    urlTrailer: "https://www.youtube.com/watch?v=gtlg3P2lrts",
+  },
+  {
     available: true,
     code: 1191110,
     description:
@@ -404,9 +385,9 @@ const peliculas = [
       "https://w0.peakpx.com/wallpaper/83/580/HD-wallpaper-movie-black-panther-wakanda-forever.jpg",
     urlImageSmallSize:
       "https://www.themoviedb.org/t/p/w220_and_h330_face/rzAShiFrU6tSSr9gLD5AxKKwtOo.jpg",
-    urlTrailer:
-      "https://www.youtube.com/watch?v=gtlg3P2lrts"
-  },{
+    urlTrailer: "https://www.youtube.com/watch?v=gtlg3P2lrts",
+  },
+  {
     available: true,
     code: 1191112,
     description:
@@ -421,9 +402,9 @@ const peliculas = [
       "https://w0.peakpx.com/wallpaper/83/580/HD-wallpaper-movie-black-panther-wakanda-forever.jpg",
     urlImageSmallSize:
       "https://www.themoviedb.org/t/p/w220_and_h330_face/aCy61aU7BMG7SfhkaAaasS0KzUO.jpg",
-    urlTrailer:
-      "https://www.youtube.com/watch?v=gtlg3P2lrts"
-  },{
+    urlTrailer: "https://www.youtube.com/watch?v=gtlg3P2lrts",
+  },
+  {
     available: true,
     code: 1194112,
     description:
@@ -438,9 +419,9 @@ const peliculas = [
       "https://w0.peakpx.com/wallpaper/83/580/HD-wallpaper-movie-black-panther-wakanda-forever.jpg",
     urlImageSmallSize:
       "https://www.themoviedb.org/t/p/w220_and_h330_face/aCy61aU7BMG7SfhkaAaasS0KzUO.jpg",
-    urlTrailer:
-      "https://www.youtube.com/watch?v=gtlg3P2lrts"
-  },{
+    urlTrailer: "https://www.youtube.com/watch?v=gtlg3P2lrts",
+  },
+  {
     available: true,
     code: 1443112,
     description:
@@ -455,9 +436,9 @@ const peliculas = [
       "https://w0.peakpx.com/wallpaper/83/580/HD-wallpaper-movie-black-panther-wakanda-forever.jpg",
     urlImageSmallSize:
       "https://www.themoviedb.org/t/p/w220_and_h330_face/aCy61aU7BMG7SfhkaAaasS0KzUO.jpg",
-    urlTrailer:
-      "https://www.youtube.com/watch?v=gtlg3P2lrts"
-  },{
+    urlTrailer: "https://www.youtube.com/watch?v=gtlg3P2lrts",
+  },
+  {
     available: true,
     code: 14451112,
     description:
@@ -472,9 +453,9 @@ const peliculas = [
       "https://w0.peakpx.com/wallpaper/83/580/HD-wallpaper-movie-black-panther-wakanda-forever.jpg",
     urlImageSmallSize:
       "https://www.themoviedb.org/t/p/w220_and_h330_face/aCy61aU7BMG7SfhkaAaasS0KzUO.jpg",
-    urlTrailer:
-      "https://www.youtube.com/watch?v=gtlg3P2lrts"
-  },{
+    urlTrailer: "https://www.youtube.com/watch?v=gtlg3P2lrts",
+  },
+  {
     available: true,
     code: 1192212,
     description:
@@ -489,19 +470,19 @@ const peliculas = [
       "https://w0.peakpx.com/wallpaper/83/580/HD-wallpaper-movie-black-panther-wakanda-forever.jpg",
     urlImageSmallSize:
       "https://www.themoviedb.org/t/p/w220_and_h330_face/aCy61aU7BMG7SfhkaAaasS0KzUO.jpg",
-    urlTrailer:
-      "https://www.youtube.com/watch?v=gtlg3P2lrts"
-  }
+    urlTrailer: "https://www.youtube.com/watch?v=gtlg3P2lrts",
+  },
 ];
 
 // const peliculasToJSON = JSON.stringify(peliculas);
 // localStorage.setItem("movies", peliculasToJSON);
 
-
-function toggleTesting(){
-  moviesTesting = !moviesTesting
-  console.log(moviesTesting)
-  if(moviesTesting){
-    saveMovies(peliculas, "movies")
-  }else{saveMovies([],"movies")}
+function toggleTesting() {
+  moviesTesting = !moviesTesting;
+  console.log(moviesTesting);
+  if (moviesTesting) {
+    saveMovies(peliculas, "movies");
+  } else {
+    saveMovies([], "movies");
+  }
 }
