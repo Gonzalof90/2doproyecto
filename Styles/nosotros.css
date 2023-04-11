@@ -10,7 +10,7 @@ header {
 }
 header a {
   -webkit-text-stroke: 1px #000;
-  color: #6d3409 !important;;
+  color: #fdb37c !important;
   letter-spacing: 5px;
   cursor:pointer;
   text-transform:uppercase;
@@ -50,7 +50,7 @@ header a:hover {
       
       position:relative;
       overflow:hidden;
-      width:10rem;
+      width:100%;
       height:25rem ;
       margin:0 auto;
       background:#333;

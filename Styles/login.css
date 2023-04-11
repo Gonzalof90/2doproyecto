@@ -8,26 +8,25 @@ body {
 }
 header {
     background-color: black;
-    width: 100%;
-    box-shadow: 1px 5px 10px #fc7c1c;
-    opacity: 0.9;
-  }
-  header a {
+    box-shadow: 1px 5px 10px #fc7c1c
+}
+header a {
     -webkit-text-stroke: 1px black;
-    color: #6d3409 !important;;
+    color: #fdb37c !important;;
     letter-spacing: 5px;
     cursor:pointer;
     text-transform:uppercase;
     transition: 1s;
-  }
-  header a:hover {
+
+}
+header a:hover {
     color: #fff !important;
     text-shadow: 0 0 5px #fc7c1c,
     0 0 25px #fc7c1c,
     0 0 50px #fc7c1c,
     0 0 100px #fc7c1c;
-  
-  }
+
+}
 .login {
     width:100%;
     padding:70px 30px 44px;
@@ -250,7 +249,13 @@ footer .copy {
     0 0 50px #00acee,
     0 0 100px #00acee;
 }
-
+#buttonRegister a {
+    text-decoration: none;
+    text-decoration-color: #f9f9f9;
+}
+#buttonRegister:hover {
+    color:#f9f9f9;
+}
 
 @media screen and (min-width:767px) {
     .navbar {

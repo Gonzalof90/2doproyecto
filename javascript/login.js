@@ -41,5 +41,7 @@ $registrarse.addEventListener ("click", () => {
     const login = userConvertedJSON.filter((users) =>$emailLogin.value ===users.user)
     if (login.length) {
     window.location.replace(`/views/administracion.html`)
+    } else {
+      alert("el usuario no está registrado")
     }
   })
