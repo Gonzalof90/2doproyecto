@@ -18,21 +18,35 @@ border:groove;
     position: relative;
     display: inline-block;
     text-align: center;
-   
 }
-
 
 .centrado{
     opacity:50%;
     position: absolute;
     font-size:1.6em;
-    height:80%;
-    top:6.5vh;
+    top:5vh;
 }
 
-main {
+@media screen and (max-width:660px) {
+    .centrado{
+       display:none;
+    }
 }
 
 body , main {
     background-color:black;
 }
+
+@media (width >= 450px) {
+
+}
+
+
+@media scren and (min-width:476px) {
+    main{
+        display:none;   
+     }
+ }
+ }
+ 
+
