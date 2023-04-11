@@ -87,7 +87,7 @@ header a:hover {
       
     }
     .testimotionals .card .content .image {
-      width:100px; 
+      width:6rem; 
       height:100px;
       margin:0 auto;
       border-radius:50%;
@@ -183,7 +183,7 @@ header a:hover {
       0 0 100px #c4302b;
   }
   .navbar-toggler {
-      background-color: #fc7c1c;
+      background-color: #fc7c1c!important;
   }
   #Twitter {
       color: #fff !important;
