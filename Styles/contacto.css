@@ -38,7 +38,7 @@ header a:hover {
 	width: 0%;
 	height: 100%;
 	max-width: 100%;
-	background-image: url(../assets/imgcontacto/contact_bg.png);
+	/*background-image: url(../assets/imgcontacto/contact_bg.png);*/
 }
 
 body {
@@ -54,9 +54,9 @@ h2 {
 
  /* SECCION CONTACTO */
  .contacto{
-    background-image: url(/assets/contact_bg.png);
+    background-image: url(/assets/imgcontacto/contact_bg.png);
     background-color: #1e2326;
-    color: #fff;
+    color: #fc7c1c;
     padding: 50px 0;
 }
 .contacto .contenido-seccion{
@@ -68,6 +68,7 @@ h2 {
     font-family: 'Righteous';
     text-align: center;
     padding: 20px 0;
+    color: #fc7c1c;
 }
 .contacto .fila{
     display: flex;
@@ -95,7 +96,7 @@ h2 {
     text-align: center;
 }
 .form-txt a{
-    color: #fff;
+    color: #fc7c1c;
     font-size: 14px;
     font-weight: 500;
 }
@@ -127,27 +128,6 @@ h2 {
 }
 .contacto .col img{
     width: 100%;
-}
-.contacto .col .info{
-    display: flex;
-    justify-content:space-around ;
-    top: 40%;
-    background-color: #252A2E;
-    padding: 20px;
-    max-width:  350px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.contacto .col .info ul{
-    list-style: none;
-}
-.contacto .col .info ul li{
-    margin-bottom: 70px;
-}
-.contacto .col .info ul li i{
-    color: #1CB698;
-    display: inline-block;
-    margin-right: 20px;
 }
 
 footer {
