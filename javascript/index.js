@@ -25,9 +25,9 @@ let [pelicula] = outstanding
 let {urlImageBigSize,name,genre,description,code} = pelicula
 let $destacado = document.querySelector("#destacado")
 $destacado.innerHTML = `<div class="contenedor w-100">
-<a href="film.html?idMovie=${code}">
-<img class="w-100" src="${urlImageBigSize}" draggable="false"/>
-<div class="centrado text-light bg-dark display-5 w-100">Titulo:${name}<br>Genero:${genre}<br>Descripcion:${description}</div>
+<a href="film.html?idMovie=${code}" class="d-flex">
+<img class="w-100 img-fluid" src="${urlImageBigSize}" draggable="false"/>
+<div class="centrado text-light bg-dark w-100 container-fluid justify-content-center">Titulo:${name}<br>Genero:${genre}<br>Descripcion:${description}</div>
 </a>
 </div>`
 

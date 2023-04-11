@@ -18,18 +18,16 @@ border:groove;
     position: relative;
     display: inline-block;
     text-align: center;
+   
 }
 
-.texto-encima{
-    position: absolute;
-    top:10vw;
-    left:10vw;
-}
 
 .centrado{
     opacity:50%;
-    top:15vw;
     position: absolute;
+    font-size:1.6em;
+    height:80%;
+    top:6.5vh;
 }
 
 main {
