@@ -10,8 +10,7 @@ border:groove;
 }
 
 #destacado {
-    box-shadow:#974101 35px 5px 34px;
-    ;
+
 }
 
 .contenedor{
@@ -21,10 +20,10 @@ border:groove;
 }
 
 .centrado{
-    opacity:50%;
+    background:rgba(17,19,21, .5);
     position: absolute;
     font-size:1.6em;
-    top:5vh;
+    top:0;
 }
 
 @media screen and (max-width:660px) {
@@ -46,7 +45,6 @@ body , main {
     main{
         display:none;   
      }
- }
  }
  
 

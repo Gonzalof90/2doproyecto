@@ -28,11 +28,12 @@
       defer
     ></script>
     <script src="/javascript/film.js" defer></script>
+    
   </head>
   <body class="bg">
-    <header>
+    <header class="mb-1">
       <nav
-        class="navbar navbar-expand-md fs-4 fw-bold shadow p-3 mb-5 bg-body-tertiary rounded"
+        class="navbar navbar-expand-md fs-4 fw-bold shadow p-3 bg-body-tertiary rounded"
       >
         <div class="container justify-content-center">
           <div class="row justify-content-between w-100">
@@ -98,22 +99,20 @@
       </nav>
     </header>
     <main>
-      <section id="filmContainer" class="">
-        <div data-bs-theme="dark">
-          <button type="button" class="btn-close" aria-label="Close"></button>
-        </div>
-        <article class="bg d-flex justify-content-center text-center m-0 p-1">
-          <div class="container-fluid bg col-12">
+      <section id="filmContainer">
+       
+        <article class="bg d-flex justify-content-center text-center m">
+          <div class="bg col-12">
             <div id="bannerPelicula"></div>
-            <h2 class="card-title text-center" id="nombrePelicula">
+            <h2 class="card-title text-center mt-4" id="nombrePelicula">
               Los Vengadores
             </h2>
-            <div class="d-flex flex-wrap justify-content-md-center text-center">
+            <div class="d-flex flex-wrap justify-content-md-center text-center fs-5 mb-2">
               <p id="añoPelicula" class="m-1 text-dark-emphasis">2012</p>
               <p id="duracionPelicula" class="m-1 text-light">2h 23m</p>
               <p id="generoPelicula" class="m-1">Aventura/Acción</p>
             </div>
-            <a href="/views/page-error.html" class="btn col-12 btn-secondary"
+            <a href="/views/page-error.html" class="btn col-12 col-md-2 btn-secondary"
               >VER AHORA</a
             >
           </div>
@@ -153,18 +152,18 @@
             <div class="row">
               <div class="col">
                 <div class="collapse multi-collapse" id="multiCollapseExample1">
-                  <div class="card card-body">
+                  <div class="card card-body text-white bg-dark">
                     <h3>Reparto de actores</h3>
                     <ul class="list-group">
-                      <li id="Actor1" class="list-group-item">
+                      <li id="Actor1" class="list-group-item text-light bg-dark">
                         Robert Downey Jr.
                       </li>
-                      <li id="Actor2" class="list-group-item">Mark Ruffalo</li>
-                      <li id="Actor3" class="list-group-item">Chris Evans</li>
-                      <li id="Actor4" class="list-group-item">
+                      <li id="Actor2" class="list-group-item text-light bg-dark">Mark Ruffalo</li>
+                      <li id="Actor3" class="list-group-item text-light bg-dark">Chris Evans</li>
+                      <li id="Actor4" class="list-group-item text-light bg-dark">
                         Chris Hemsworth
                       </li>
-                      <li id="Actor5" class="list-group-item">
+                      <li id="Actor5" class="list-group-item text-light bg-dark">
                         Scarlett Johansson
                       </li>
                     </ul>
@@ -176,9 +175,9 @@
                   class="collapse multi-collapse m-2"
                   id="multiCollapseExample2"
                 >
-                  <div class="card card-body">
+                  <div class="card card-body text-light bg-dark">
                     <h3>Sinopsis</h3>
-                    <p id="sinopsisPelicula" class="text-black m-2">
+                    <p id="sinopsisPelicula" class="m-2">
                       El director de la Agencia SHIELD decide reclutar a un
                       equipo para salvar al mundo de un desastre casi seguro
                       cuando un enemigo inesperado surge como una gran amenaza
@@ -192,7 +191,7 @@
         </article>
         <div
           id="contenedorTrailer"
-          class="d-flex justify-content-sm-center align-items-center align-content-center text-center container-smgit m-2"
+          class="d-flex justify-content-sm-center align-items-center align-content-center text-center container-smgit m-2 row"
         ></div>
       </section>
     </main>
